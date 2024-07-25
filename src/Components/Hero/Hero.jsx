@@ -22,7 +22,7 @@ const Hero = () => {
           alt="Zimuth"
           className="h-32 w-auto"
         />
-        <div className="w-2/4">
+        <div className="w-3/4 lg:w-2/4">
           <div className="flex items-center gap-2">
             {trendingTopics.map((topic, index) => {
               return (
