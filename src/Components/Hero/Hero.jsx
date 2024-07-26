@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
+import { motion } from "framer-motion";
 import whiteLogo from "../../assets/logo_vertical_white.png";
 import blackLogo from "../../assets/logo_vertical_black.png";
 import { ThemeContext } from "../Context/ThemeContext";
 import { Link } from "react-router-dom";
 import { HiCube } from "react-icons/hi2";
+import { useInView } from "react-intersection-observer";
 
 const trendingTopics = [
   "trending topic 1",
@@ -12,8 +14,11 @@ const trendingTopics = [
 ];
 
 const Hero = () => {
+  const [ref, inView] = useInView({ triggerOnce: true });
   const { theme } = useContext(ThemeContext);
   const [searchText, setSearchText] = useState("");
+  const [isInputFocused, setIsInputFocused] = useState(false);
+
   return (
     <div className="w-full h-screen flex pt-24 justify-center bg-gradient-to-br from-[#f2f3f4] via-[#ebebf4] to-[#d9f0f0] dark:from-darkBlack dark:to-darkBlack ">
       <div className="flex w-full flex-col items-center">
@@ -23,29 +28,43 @@ const Hero = () => {
           className="h-32 w-auto"
         />
         <div className="w-3/4 lg:w-3/5">
-          <div className="flex items-center gap-2">
-            {trendingTopics.map((topic, index) => {
-              return (
-                <Link
-                  key={index}
-                  className="py-1 px-2 rounded-3xl capitalize bg-gradient-to-br from-[#99f1ee] via-[#dffffe] dark:via-[#015452] dark:text-darkWhite to-[#ffffff] dark:to-[#1e1e1e] text-darkBlack"
-                >
-                  {topic}
-                </Link>
-              );
-            })}
-          </div>
-          <div className="pt-2 flex flex-col items-center gap-2">
-            <input
-              type="text"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#202020] dark:placeholder-darkWhite bg-white"
-              placeholder="/ type something here"
-            />
-            <p className="text-xs">
-              Zimuth may make mistakes. Check important info.
-            </p>
+          <div
+            onMouseEnter={() => setIsInputFocused(true)}
+            onMouseLeave={() => setIsInputFocused(false)}
+          >
+            <div className="flex items-center gap-2">
+              {trendingTopics.map((topic, index) => {
+                return (
+                  <Link key={index} className="">
+                    <motion.div
+                      className="py-1 px-2 rounded-3xl capitalize bg-gradient-to-br from-[#99f1ee] via-[#dffffe] dark:via-[#015452] dark:text-darkWhite to-[#ffffff] dark:to-[#1e1e1e] text-darkBlack"
+                      initial={{ opacity: 0 }}
+                      animate={
+                        isInputFocused ? { x: 0, opacity: 1 } : { opacity: 0 }
+                      }
+                      transition={{
+                        duration: 0.3,
+                        delay: (index + 1) * 0.1,
+                      }}
+                    >
+                      {topic}
+                    </motion.div>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="pt-2 flex flex-col items-center gap-2">
+              <input
+                type="text"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#202020] dark:placeholder-darkWhite bg-white"
+                placeholder="/ type something here"
+              />
+              <p className="text-xs">
+                Zimuth may make mistakes. Check important info.
+              </p>
+            </div>
           </div>
           {/* Boxes */}
           <div className="w-full grid mt-4 grid-cols-2 gap-3">

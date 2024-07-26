@@ -1,26 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { CgArrowLeft, CgArrowRight } from "react-icons/cg";
 import { ThemeContext } from "../Context/ThemeContext";
 import Img1 from "../../assets/carousel-img-1.jpg";
 import Img2 from "../../assets/carousel-img-2.jpg";
 import { Link } from "react-router-dom";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 // Custom Next Arrow
 const NextArrow = (props) => {
   const { className, style, onClick, theme } = props;
   return (
-    <FaArrowRight
-      className={className}
+    <SlArrowRight
+      className={`${className} scale-125`}
       style={{
         ...style,
         display: "block",
         color: theme === "dark" ? "white" : "black",
         position: "absolute",
-        top: "-15%",
+        top: "-18%",
         right: "50px",
+        scale: "",
         zIndex: 2,
         cursor: "pointer",
       }}
@@ -33,14 +35,14 @@ const NextArrow = (props) => {
 const PrevArrow = (props) => {
   const { className, style, onClick, theme } = props;
   return (
-    <FaArrowLeft
-      className={className}
+    <SlArrowLeft
+      className={`${className} scale-125`}
       style={{
         ...style,
         display: "block",
         color: theme === "dark" ? "white" : "black",
         position: "absolute",
-        top: "-15%",
+        top: "-18%",
         left: "80%",
         zIndex: 2,
         cursor: "pointer",
@@ -52,6 +54,7 @@ const PrevArrow = (props) => {
 
 const Carousel = () => {
   const { theme } = useContext(ThemeContext);
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -118,8 +121,8 @@ const Carousel = () => {
                   <div className="absolute top-0 left-0 p-6 h-full bg-gradient-to-b from-black/40 to-transparent text-white rounded-lg w-full">
                     <h3 className="text-xl font-bold">{slide.slideHeading}</h3>
                     <p>{slide.slideDesc}</p>
-                    <Link>
-                      <FaArrowRight
+                    <Link to={slide.slideLink}>
+                      <CgArrowRight
                         size={24}
                         className="absolute bottom-4 right-4 text-white"
                       />

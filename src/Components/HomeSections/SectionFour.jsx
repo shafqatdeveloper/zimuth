@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import SectionImage from "../../assets/section_4.webp";
 import { ThemeContext } from "../Context/ThemeContext";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { MdOutlineLightMode } from "react-icons/md";
+import { IoMoonOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const SectionFour = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -29,14 +31,19 @@ const SectionFour = () => {
       </div>
       <button
         onClick={toggleTheme}
-        className="flex items-center fixed z-20 left-3 bottom-3 justify-center text-darkWhite bg-darkPurple p-2 rounded-md"
+        className="flex items-center absolute z-20 left-3 bottom-3 justify-center text-darkBlack  rounded-md"
       >
         {theme === "dark" ? (
-          <MdLightMode size={24} />
+          <MdOutlineLightMode size={24} />
         ) : (
-          <MdDarkMode size={24} />
+          <IoMoonOutline size={24} />
         )}
       </button>
+      <div className="absolute bottom-3 right-4 flex items-center gap-5 text-xs font-semibold">
+        <Link to={"/contact-us"}>Contact us</Link>
+        <Link to={"/terms-and-conditons"}>Terms and Conditons</Link>
+        <h1>&copy; Searcher Inc. 2024.</h1>
+      </div>
     </div>
   );
 };
