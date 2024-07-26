@@ -5,7 +5,6 @@ import WhiteLogo from "../../assets/logo_horizontal_white_circle.png";
 import { RiErrorWarningFill } from "react-icons/ri";
 import { FaRegNewspaper, FaUserCircle } from "react-icons/fa";
 import { IoPricetags } from "react-icons/io5";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { ThemeContext } from "../Context/ThemeContext";
 
 const Navbar = () => {
@@ -31,7 +30,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-darkWhite dark:bg-darkBlack fixed w-full transition-transform duration-300 ${
+      className={`bg-darkWhite dark:bg-darkBlack fixed w-full z-20 transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -72,16 +71,6 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-center text-darkBlack dark:text-white"
-            >
-              {theme === "dark" ? (
-                <MdLightMode size={24} />
-              ) : (
-                <MdDarkMode size={24} />
-              )}
-            </button>
             <button className="bg-[#00dbd5] font-semibold flex items-center gap-1 tracking-wide px-3 py-2 rounded-md text-darkBlack dark:text-white">
               <FaUserCircle />
               <Link to="/login" className="">

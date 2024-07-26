@@ -15,14 +15,14 @@ const Hero = () => {
   const { theme } = useContext(ThemeContext);
   const [searchText, setSearchText] = useState("");
   return (
-    <div className="w-full h-screen flex pt-24 justify-center">
+    <div className="w-full h-screen flex pt-24 justify-center bg-gradient-to-br from-[#f2f3f4] via-[#ebebf4] to-[#d9f0f0] dark:from-darkBlack dark:to-darkBlack ">
       <div className="flex w-full flex-col items-center">
         <img
           src={theme === "dark" ? whiteLogo : blackLogo}
           alt="Zimuth"
           className="h-32 w-auto"
         />
-        <div className="w-3/4 lg:w-2/4">
+        <div className="w-3/4 lg:w-3/5">
           <div className="flex items-center gap-2">
             {trendingTopics.map((topic, index) => {
               return (
