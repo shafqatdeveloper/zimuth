@@ -1,0 +1,9 @@
+.gradient-background {
+    background: linear-gradient(to bottom, 
+    #e5fbfb,   
+    #ccf8f7,   
+    #99f1ee,  
+    #66e9e6, 
+    #33e2dd  
+    );
+  }

@@ -3,7 +3,7 @@ import SectionImage from "../../assets/section_3.webp";
 
 const SectionThree = () => {
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-cyan40 text-darkBlack">
+    <div className="w-full h-screen flex items-center justify-center  text-darkBlack">
       <div className="flex w-4/5">
         <div className="w-3/5 flex flex-col justify-center">
           <h1 className="text-3xl font-semibold">Helping you</h1>

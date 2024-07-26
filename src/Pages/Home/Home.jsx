@@ -5,18 +5,19 @@ import SectionOne from "../../Components/HomeSections/SectionOne";
 import SectionTwo from "../../Components/HomeSections/Sectiontwo";
 import SectionThree from "../../Components/HomeSections/SectionThree";
 import SectionFour from "../../Components/HomeSections/SectionFour";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { ThemeContext } from "../../Components/Context/ThemeContext";
+import "./Home.css";
 
 const Home = () => {
   return (
     <div className="h-full w-full bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-white">
       <Hero />
       <HeroCarousel />
-      <SectionOne />
-      <SectionTwo />
-      <SectionThree />
-      <SectionFour />
+      <div className="gradient-background">
+        <SectionOne />
+        <SectionTwo />
+        <SectionThree />
+        <SectionFour />
+      </div>
     </div>
   );
 };
