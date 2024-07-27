@@ -10,7 +10,7 @@ import { ThemeContext } from "../Context/ThemeContext";
 const Navbar = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {

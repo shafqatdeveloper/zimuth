@@ -34,12 +34,15 @@ const SectionFour = () => {
         className="flex items-center absolute z-20 left-3 bottom-3 justify-center text-darkBlack  rounded-md"
       >
         {theme === "dark" ? (
-          <MdOutlineLightMode size={24} />
+          <MdOutlineLightMode size={20} />
         ) : (
-          <IoMoonOutline size={24} />
+          <IoMoonOutline size={20} />
         )}
       </button>
-      <div className="absolute bottom-3 right-4 flex items-center gap-5 text-xs font-semibold">
+      <div
+        style={{ fontSize: "0.5rem", lineHeight: "0.75rem" }}
+        className="absolute bottom-3 right-4 flex items-center gap-2 font-semibold"
+      >
         <Link to={"/contact-us"}>Contact us</Link>
         <Link to={"/terms-and-conditons"}>Terms and Conditons</Link>
         <h1>&copy; Searcher Inc. 2024.</h1>

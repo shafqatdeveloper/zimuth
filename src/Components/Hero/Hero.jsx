@@ -20,7 +20,7 @@ const Hero = () => {
   const [isInputFocused, setIsInputFocused] = useState(false);
 
   return (
-    <div className="w-full h-screen flex pt-24 justify-center bg-gradient-to-br from-[#f2f3f4] via-[#ebebf4] to-[#d9f0f0] dark:from-darkBlack dark:to-darkBlack ">
+    <div className="w-full h-screen flex pt-24 justify-center dark:from-darkBlack dark:to-darkBlack bg-darkWhite dark:bg-darkBlack">
       <div className="flex w-full flex-col items-center">
         <img
           src={theme === "dark" ? whiteLogo : blackLogo}

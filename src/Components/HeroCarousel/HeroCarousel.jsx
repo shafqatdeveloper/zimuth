@@ -1,68 +1,21 @@
-import React, { useContext, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { CgArrowLeft, CgArrowRight } from "react-icons/cg";
+import React, { useContext } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+// import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 import { ThemeContext } from "../Context/ThemeContext";
 import Img1 from "../../assets/carousel-img-1.jpg";
 import Img2 from "../../assets/carousel-img-2.jpg";
 import { Link } from "react-router-dom";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-
-// Custom Next Arrow
-const NextArrow = (props) => {
-  const { className, style, onClick, theme } = props;
-  return (
-    <SlArrowRight
-      className={`${className} scale-125`}
-      style={{
-        ...style,
-        display: "block",
-        color: theme === "dark" ? "white" : "black",
-        position: "absolute",
-        top: "-18%",
-        right: "50px",
-        scale: "",
-        zIndex: 2,
-        cursor: "pointer",
-      }}
-      onClick={onClick}
-    />
-  );
-};
-
-// Custom Prev Arrow
-const PrevArrow = (props) => {
-  const { className, style, onClick, theme } = props;
-  return (
-    <SlArrowLeft
-      className={`${className} scale-125`}
-      style={{
-        ...style,
-        display: "block",
-        color: theme === "dark" ? "white" : "black",
-        position: "absolute",
-        top: "-18%",
-        left: "80%",
-        zIndex: 2,
-        cursor: "pointer",
-      }}
-      onClick={onClick}
-    />
-  );
-};
+import { CgArrowRight } from "react-icons/cg";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
 const Carousel = () => {
   const { theme } = useContext(ThemeContext);
-
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow theme={theme} />,
-    prevArrow: <PrevArrow theme={theme} />,
-  };
 
   const carouselSlides = [
     {
@@ -104,19 +57,37 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="container w-4/5 mx-auto relative mt-20">
-      <h2 className="text-start text-2xl mb-8">AI Search, Re-imagined</h2>
+    <div className="container w-[87%] mx-auto relative mt-20 text-darkBlack">
+      <h2 className="text-start text-3xl font-semibold mb-8 relative">
+        AI Search, Re-imagined
+        <div className="absolute top-0 right-48 flex space-x-8 text-gray-400 ">
+          <div className="swiper-button-prev cursor-pointer">
+            <MdOutlineKeyboardArrowLeft size={45} />
+          </div>
+          <div className="swiper-button-next cursor-pointer">
+            <MdOutlineKeyboardArrowRight size={45} />
+          </div>
+        </div>
+      </h2>
       <div className="relative">
-        <Slider {...settings}>
-          {/* Slides */}
-          {carouselSlides.map((slide, index) => {
-            return (
-              <div key={index} className="px-2">
-                <div className="relative">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={15}
+          loop={true}
+          slidesPerView={3.5}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+        >
+          {carouselSlides.map((slide, index) => (
+            <SwiperSlide key={index} className="overflow-hidden">
+              <div className="relative rounded-lg overflow-hidden">
+                <div className="hover:scale-105 cursor-pointer transition-all duration-200">
                   <img
                     src={slide.slideImg}
                     alt={slide.slideHeading}
-                    className="rounded-lg shadow-lg w-full h-full object-cover"
+                    className="rounded-lg shadow-lg w-full h-[25rem] object-cover"
                   />
                   <div className="absolute top-0 left-0 p-6 h-full bg-gradient-to-b from-black/40 to-transparent text-white rounded-lg w-full">
                     <h3 className="text-xl font-bold">{slide.slideHeading}</h3>
@@ -130,9 +101,9 @@ const Carousel = () => {
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </Slider>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
