@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-// import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { ThemeContext } from "../Context/ThemeContext";
 import Img1 from "../../assets/carousel-img-1.jpg";
 import Img2 from "../../assets/carousel-img-2.jpg";
 import { Link } from "react-router-dom";
-import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { CgArrowRight } from "react-icons/cg";
 import {
   MdOutlineKeyboardArrowLeft,
@@ -58,47 +56,48 @@ const Carousel = () => {
 
   return (
     <div className="container w-[87%] mx-auto relative mt-20 text-darkBlack">
-      <h2 className="text-start text-3xl font-semibold mb-8 relative">
+      <h2 className="text-start text-3xl font-semibold mb-12 relative">
         AI Search, Re-imagined
-        <div className="absolute top-0 right-48 flex space-x-8 text-gray-400 ">
-          <div className="swiper-button-prev cursor-pointer">
-            <MdOutlineKeyboardArrowLeft size={45} />
-          </div>
-          <div className="swiper-button-next cursor-pointer">
-            <MdOutlineKeyboardArrowRight size={45} />
-          </div>
-        </div>
       </h2>
+      <div className="absolute top-0 right-48 flex space-x-8 text-gray-400 ">
+        <div className="swiper-button-prev cursor-pointer">
+          <MdOutlineKeyboardArrowLeft size={45} className="pointer-expand" />
+        </div>
+        <div className="swiper-button-next cursor-pointer">
+          <MdOutlineKeyboardArrowRight size={45} className="pointer-expand" />
+        </div>
+      </div>
       <div className="relative">
         <Swiper
           modules={[Navigation]}
-          spaceBetween={15}
+          spaceBetween={17}
           loop={true}
           slidesPerView={3.5}
+          direction="horizontal"
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           }}
         >
           {carouselSlides.map((slide, index) => (
-            <SwiperSlide key={index} className="overflow-hidden">
-              <div className="relative rounded-lg overflow-hidden">
-                <div className="hover:scale-105 cursor-pointer transition-all duration-200">
-                  <img
-                    src={slide.slideImg}
-                    alt={slide.slideHeading}
-                    className="rounded-lg shadow-lg w-full h-[25rem] object-cover"
-                  />
-                  <div className="absolute top-0 left-0 p-6 h-full bg-gradient-to-b from-black/40 to-transparent text-white rounded-lg w-full">
-                    <h3 className="text-xl font-bold">{slide.slideHeading}</h3>
-                    <p>{slide.slideDesc}</p>
-                    <Link to={slide.slideLink}>
-                      <CgArrowRight
-                        size={24}
-                        className="absolute bottom-4 right-4 text-white"
-                      />
-                    </Link>
-                  </div>
+            <SwiperSlide key={index}>
+              <div className="relative rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-200 hover:scale-105">
+                <img
+                  src={slide.slideImg}
+                  alt={slide.slideHeading}
+                  className="rounded-lg shadow-lg w-full h-[25.5rem] object-cover"
+                />
+                <div className="absolute top-0 left-0 p-6 h-full bg-white/20 text-white rounded-lg w-full">
+                  <h3 className="">{slide.slideHeading}</h3>
+                  <p className="text-xl font-bold line-clamp-none">
+                    {slide.slideDesc}
+                  </p>
+                  <Link to={slide.slideLink}>
+                    <CgArrowRight
+                      size={34}
+                      className="absolute bottom-4 right-4 text-white pointer-expand"
+                    />
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>

@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-darkWhite dark:bg-darkBlack fixed w-full z-20 transition-transform duration-300 ${
+      className={`bg-darkWhite dark:bg-darkBlack text-sm shadow-md fixed w-full z-20 transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -45,7 +45,7 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <div className="hidden md:flex md:items-center md:space-x-10">
+          <div className="hidden  md:flex md:items-center md:space-x-10">
             <Link
               to="/about-us"
               className="text-darkBlack dark:text-darkWhite hover:text-gray-900 flex items-center gap-1"

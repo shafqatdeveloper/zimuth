@@ -1,0 +1,12 @@
+.overlay {
+    background: linear-gradient(to bottom, rgba(231, 229, 229, 0.4), transparent);
+  }
+  
+  .pointer-expand {
+    transition: transform 0.3s ease;
+  }
+  
+  .pointer-expand:hover {
+    transform: scale(1.2);
+  }
+  

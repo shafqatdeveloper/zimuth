@@ -20,7 +20,7 @@ const Hero = () => {
   const [isInputFocused, setIsInputFocused] = useState(false);
 
   return (
-    <div className="w-full h-screen flex pt-24 justify-center dark:from-darkBlack dark:to-darkBlack bg-darkWhite dark:bg-darkBlack">
+    <div className="w-full h-screen flex pt-24 justify-center bg-white dark:bg-darkBlack">
       <div className="flex w-full flex-col items-center">
         <img
           src={theme === "dark" ? whiteLogo : blackLogo}
@@ -58,7 +58,7 @@ const Hero = () => {
                 type="text"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
-                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#202020] dark:placeholder-darkWhite bg-white"
+                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#202020] dark:placeholder-darkWhite bg-darkWhite"
                 placeholder="/ type something here"
               />
               <p className="text-xs">
@@ -69,7 +69,7 @@ const Hero = () => {
           {/* Boxes */}
           <div className="w-full grid mt-4 grid-cols-2 gap-3">
             {/* Box 1 */}
-            <div className="bg-white dark:bg-black rounded-xl px-3 py-5  flex flex-col gap-2">
+            <div className="bg-darkWhite dark:bg-black rounded-xl px-3 py-5  flex flex-col gap-2">
               <div className="bg-darkBlue w-max p-1 rounded-md text-darkCyan">
                 <HiCube size={25} />
               </div>
@@ -82,7 +82,7 @@ const Hero = () => {
               </p>
             </div>
             {/* Box 2 */}
-            <div className="bg-white dark:bg-black rounded-xl px-3 py-5  flex flex-col gap-2">
+            <div className="bg-darkWhite dark:bg-black rounded-xl px-3 py-5  flex flex-col gap-2">
               <div className="bg-black dark:bg-darkBlack w-max p-1 rounded-md text-darkCyan">
                 <HiCube size={25} />
               </div>
