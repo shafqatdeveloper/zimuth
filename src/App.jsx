@@ -6,6 +6,7 @@ import About from "./Pages/About/About";
 import { ThemeContext } from "./Components/Context/ThemeContext";
 import { MdOutlineLightMode } from "react-icons/md";
 import { IoMoonOutline } from "react-icons/io5";
+import ContactUs from "./Pages/Contact/ContactUs";
 
 const App = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -33,6 +34,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </div>
   );
