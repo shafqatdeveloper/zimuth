@@ -39,9 +39,9 @@ const aboutCarouselSlides = [
 
 const AboutCarousel = () => {
   return (
-    <div className="relative py-7 w-full flex items-center justify-center">
+    <div className="relative py-7 w-full flex flex-col gap-12 items-center bg-gradient-to-b from-[#FAFAFA] via-[#D9D9D9] to-[#D1D1D1] justify-center">
       <Swiper
-        spaceBetween={30}
+        spaceBetween={25}
         centeredSlides={true}
         speed={1000}
         autoplay={{
@@ -61,13 +61,13 @@ const AboutCarousel = () => {
       >
         {aboutCarouselSlides.map((slide, index) => {
           return (
-            <SwiperSlide key={index} className="w-full h-[75vh] rounded-3xl">
+            <SwiperSlide key={index} className="w-full h-[80vh] rounded-3xl">
               <img
                 src={slide.slideImg}
                 alt={slide.heading}
                 className="w-full rounded-3xl h-full object-cover"
               />
-              <div className="absolute top-0 left-0 w-full h-full flex flex-col rounded-xl justify-center items-center bg-black/20 bg-opacity-50">
+              <div className="absolute top-0 left-0 w-full h-full flex flex-col rounded-3xl justify-center items-center bg-white/30 bg-opacity-50">
                 <h1 className="text-white text-4xl">{slide.heading}</h1>
                 <p className="text-white">{slide.description}</p>
                 <button className="mt-4 px-4 py-2 bg-white text-black rounded">
@@ -78,6 +78,11 @@ const AboutCarousel = () => {
           );
         })}
       </Swiper>
+      <div className="w-2/4">
+        <h1 className="text-4xl font-semibold text-center pt-12">
+          Visualize changes in sentiment. Map information across time.
+        </h1>
+      </div>
     </div>
   );
 };

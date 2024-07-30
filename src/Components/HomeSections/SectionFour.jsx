@@ -6,7 +6,6 @@ import { IoMoonOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const SectionFour = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <div className="w-full h-screen flex items-center justify-center relative  text-darkBlack">
       <div className="flex w-4/5">
@@ -28,24 +27,6 @@ const SectionFour = () => {
             sed.
           </p>
         </div>
-      </div>
-      <button
-        onClick={toggleTheme}
-        className="flex items-center absolute z-20 left-3 bottom-3 justify-center text-darkBlack  rounded-md"
-      >
-        {theme === "dark" ? (
-          <MdOutlineLightMode size={20} />
-        ) : (
-          <IoMoonOutline size={20} />
-        )}
-      </button>
-      <div
-        style={{ fontSize: "0.5rem", lineHeight: "0.75rem" }}
-        className="absolute bottom-3 right-4 flex items-center gap-2 font-semibold"
-      >
-        <Link to={"/contact-us"}>Contact us</Link>
-        <Link to={"/terms-and-conditons"}>Terms and Conditons</Link>
-        <h1>&copy; Searcher Inc. 2024.</h1>
       </div>
     </div>
   );
