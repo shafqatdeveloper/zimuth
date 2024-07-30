@@ -142,7 +142,7 @@ const About = () => {
           <div className="w-1/5 flex flex-col items-center justify-center">
             <img src={Member3} alt="" className="w-3/4" />
             <h1 className="pt-1 font-semibold">Founder</h1>
-            <h3 className="text-sm tracking-wide">Yu Wei Ng</h3>
+            <h3 className="text-sm tracking-wide">Fei Leung</h3>
           </div>
           {/* Description Side */}
           <div className="w-4/5">
