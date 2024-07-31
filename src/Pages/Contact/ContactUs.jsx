@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -13,9 +14,13 @@ const ContactUs = () => {
           <h1 className="text-xl font-bold tracking-wide font-sans">
             Contact Us
           </h1>
-          <div className="rounded-full w-max text-darkWhite p-3 bg-[#007BB5]">
+          <Link
+            target="_blank"
+            to={"https://www.linkedin.com/company/searcher-ai/"}
+            className="rounded-full w-max text-darkWhite p-3 bg-[#007BB5]"
+          >
             <FaLinkedinIn size={30} />
-          </div>
+          </Link>
         </div>
         <div className="w-full pt-10">
           <form className="w-full flex flex-col gap-7" id="contact-us">
@@ -83,7 +88,7 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="flex items-center justify-end w-full">
-              <button className="bg-cyan80 text-white rounded-full py-1.5 px-4">
+              <button className="bg-cyan100 hover:bg-[#2db3ae] transition-all text-white rounded-full py-1.5 px-4">
                 Send
               </button>
             </div>
