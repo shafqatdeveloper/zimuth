@@ -39,7 +39,7 @@ const aboutCarouselSlides = [
 
 const AboutCarousel = () => {
   return (
-    <div className="relative pb-7 pt-1 w-full flex flex-col gap-12 items-center justify-center">
+    <div className="relative pb-7 pt-[66px] w-full flex flex-col gap-12 items-center justify-center">
       <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA] to-transparent h-[80vh] bg-blend-normal"></div>{" "}
       {/* Overlay */}
       <Swiper

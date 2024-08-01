@@ -7,7 +7,7 @@ import Member3 from "../../assets/TeamMember3.png";
 
 const About = () => {
   return (
-    <div className="relative pt-16 w-full flex flex-col items-center bg-static-bg-img justify-center bg-repeat-y bg-cover bg-fixed">
+    <div className="relative w-full flex flex-col items-center bg-static-bg-img justify-center bg-repeat-y bg-cover bg-fixed">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
       <div className="relative w-full">
