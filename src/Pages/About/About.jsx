@@ -125,10 +125,11 @@ const About = () => {
             {/* Description Side */}
             <div className="w-4/5">
               <p className="text-justify">
-                Driven by his passion for research (and annoyed at the manual
-                scraping it often entailed), Shun came up with Zimuth to
-                automating the process. It only took 6 months and a start-up,
-                but at least the original problem went away.
+                After hearing Shun's initial idea, Yu Wei decided to build a
+                demo version within a week. Big mistake. Against his better
+                judgement, he was now roped into Zimuth with no escape but
+                success. A warning to all programmers: don't build things unless
+                you're ready to become a technical founder.
               </p>
             </div>
             {/* Image Side */}
@@ -149,10 +150,11 @@ const About = () => {
             {/* Description Side */}
             <div className="w-4/5">
               <p className="text-justify">
-                Driven by his passion for research (and annoyed at the manual
-                scraping it often entailed), Shun came up with Zimuth to
-                automating the process. It only took 6 months and a start-up,
-                but at least the original problem went away.
+                Fei's the only one of us with any common sense. He's also the
+                only one who prefers UI that doesn't look like the early 2000s.
+                Apparently, bat and txt files don't represent the pinnacle of
+                design. Do hate mail contact@searcherai.net to express your
+                disagreement.
               </p>
             </div>
           </div>

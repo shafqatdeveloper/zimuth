@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import BlackLogo from "../../assets/logo_horizontal_black_circle.png";
 import WhiteLogo from "../../assets/logo_horizontal_white_circle.png";
-import { RiErrorWarningFill } from "react-icons/ri";
 import { FaRegNewspaper, FaUserCircle } from "react-icons/fa";
 import { IoPricetags } from "react-icons/io5";
 import { ThemeContext } from "../Context/ThemeContext";
+import { IoIosInformationCircle } from "react-icons/io";
 
 const Navbar = () => {
   const [show, setShow] = useState(true);
@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-darkWhite dark:bg-darkBlack flex items-center justify-center text-sm shadow-md fixed w-full z-20 transition-transform duration-300 ${
+      className={`bg-darkWhite dark:bg-[#22262b] flex items-center justify-center text-sm shadow-md fixed w-full z-20 transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -51,7 +51,7 @@ const Navbar = () => {
                 to="/about-us"
                 className="text-darkBlack dark:text-darkWhite hover:text-gray-900 flex items-center gap-1"
               >
-                <RiErrorWarningFill />
+                <IoIosInformationCircle />
                 About Us
               </Link>
               <Link

@@ -1,11 +1,82 @@
-import React from "react";
-import { FaLinkedinIn } from "react-icons/fa";
+import React, { useState, useEffect, useRef } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaXTwitter } from "react-icons/fa6";
 import dummyImg1 from "../../assets/about-carousel-img-1.jpg";
 import dummyImg2 from "../../assets/about-carousel-img-2.jpg";
 import dummyImg3 from "../../assets/about-carousel-img-3.jpg";
-import { Link } from "react-router-dom";
 
 const News = () => {
+  const [newsItems, setNewsItems] = useState([
+    {
+      date: "07-31-2024",
+      headline: "Headline",
+      img: dummyImg1,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ut ratione maxime.",
+    },
+    {
+      date: "07-31-2024",
+      headline: "Headline",
+      img: dummyImg2,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ut ratione maxime.",
+    },
+    {
+      date: "07-31-2024",
+      headline: "Headline",
+      img: dummyImg3,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ut ratione maxime.",
+    },
+  ]);
+  const [hasMore, setHasMore] = useState(true);
+  const newsContainerRef = useRef(null);
+
+  const fetchMoreNews = () => {
+    // Simulate an API call to fetch more news items
+    setTimeout(() => {
+      const newItems = [
+        {
+          date: "07-31-2024",
+          headline: "Headline",
+          img: dummyImg1,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ut ratione maxime.",
+        },
+        {
+          date: "07-31-2024",
+          headline: "Headline",
+          img: dummyImg2,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ut ratione maxime.",
+        },
+        {
+          date: "07-31-2024",
+          headline: "Headline",
+          img: dummyImg3,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ut ratione maxime.",
+        },
+      ];
+
+      setNewsItems((prevNewsItems) => [...newItems, ...prevNewsItems]);
+      if (newsItems.length >= 20) {
+        setHasMore(false);
+      }
+
+      if (newsContainerRef.current) {
+        newsContainerRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 1500);
+  };
+
+  useEffect(() => {
+    // Initial load
+    fetchMoreNews();
+  }, []);
+
   return (
     <div className="h-full w-full bg-darkWhite text-darkBlack dark:bg-darkBlack dark:text-darkWhite pb-32">
       <div className="w-full h-full flex pt-24 justify-center">
@@ -13,64 +84,66 @@ const News = () => {
           {/* Heading */}
           <div className="w-full flex items-center justify-between">
             <h1 className="text-xl font-bold tracking-wide font-sans">News</h1>
-            <Link
-              target="_blank"
-              to={"https://www.linkedin.com/company/searcher-ai/"}
-              className="rounded-full w-max text-darkWhite p-3 bg-[#007BB5]"
-            >
-              <FaLinkedinIn size={30} />
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                target="_blank"
+                to={"https://www.facebook.com"}
+                className="rounded-full w-max text-darkWhite "
+              >
+                <FaFacebookF
+                  size={34}
+                  className="bg-[#007BB5] rounded-full p-1"
+                />
+              </Link>
+              <Link
+                target="_blank"
+                to={"https://www.instagram.com"}
+                className="rounded-full w-max text-darkWhite "
+              >
+                <FaInstagram
+                  size={34}
+                  className="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 rounded-full p-1"
+                />
+              </Link>
+              <Link
+                target="_blank"
+                to={"https://www.twitter.com"}
+                className="rounded-full w-max text-darkWhite "
+              >
+                <FaXTwitter size={34} className="bg-black rounded-full p-1" />
+              </Link>
+            </div>
           </div>
           {/* News */}
-          <div className="flex flex-col pt-10 gap-7">
-            {/* News 1 */}
-            <div className="flex gap-8 pt-6">
-              <h6 className="text-sm">07-31-2024</h6>
-              <div className="flex flex-col gap-5">
-                <h1 className="font-bold tracking-wide">Headline</h1>
-                <img
-                  src={dummyImg1}
-                  alt="Dummy Image 1"
-                  className="w-32 h-32"
-                />
+          <div ref={newsContainerRef}>
+            <InfiniteScroll
+              dataLength={newsItems.length}
+              next={fetchMoreNews}
+              hasMore={hasMore}
+              loader={<h4 className="text-center text-xl py-4">Loading...</h4>}
+              endMessage={
+                <p className="text-center text-xl py-4">No more news</p>
+              }
+            >
+              <div className="flex flex-col pt-10 gap-7">
+                {newsItems.map((item, index) => (
+                  <div className="flex gap-8 pt-6" key={index}>
+                    <h6 className="text-sm self-center">{item.date}</h6>
+                    <div className="flex flex-col gap-5">
+                      <h1 className="font-bold tracking-wide">
+                        {item.headline}
+                      </h1>
+                      <img
+                        src={item.img}
+                        alt="News Image"
+                        className="w-32 h-32"
+                      />
+                    </div>
+                    <p className="self-center">{item.description}</p>
+                  </div>
+                ))}
               </div>
-              <p className="self-center">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Necessitatibus ut ratione maxime.
-              </p>
-            </div>
-            {/* News 2 */}
-            <div className="flex gap-8 pt-6">
-              <h6 className="text-sm">07-31-2024</h6>
-              <div className="flex flex-col gap-5">
-                <h1 className="font-bold tracking-wide">Headline</h1>
-                <img
-                  src={dummyImg2}
-                  alt="Dummy Image 1"
-                  className="w-32 h-32"
-                />
-              </div>
-              <p className="self-center">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Necessitatibus ut ratione maxime.
-              </p>
-            </div>
-            {/* News 3 */}
-            <div className="flex gap-8 pt-6">
-              <h6 className="text-sm">07-31-2024</h6>
-              <div className="flex flex-col gap-5">
-                <h1 className="font-bold tracking-wide">Headline</h1>
-                <img
-                  src={dummyImg3}
-                  alt="Dummy Image 1"
-                  className="w-32 h-32"
-                />
-              </div>
-              <p className="self-center">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Necessitatibus ut ratione maxime.
-              </p>
-            </div>
+            </InfiniteScroll>
           </div>
         </div>
       </div>

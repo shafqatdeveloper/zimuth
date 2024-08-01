@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FaLinkedin, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedin,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const ContactUs = () => {
@@ -14,13 +20,35 @@ const ContactUs = () => {
           <h1 className="text-xl font-bold tracking-wide font-sans">
             Contact Us
           </h1>
-          <Link
-            target="_blank"
-            to={"https://www.linkedin.com/company/searcher-ai/"}
-            className="rounded-full w-max text-darkWhite p-3 bg-[#007BB5]"
-          >
-            <FaLinkedinIn size={30} />
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              target="_blank"
+              to={"https://www.facebook.com"}
+              className="rounded-full w-max text-darkWhite "
+            >
+              <FaFacebookF
+                size={34}
+                className="bg-[#007BB5] rounded-full p-1"
+              />
+            </Link>
+            <Link
+              target="_blank"
+              to={"https://www.instagram.com"}
+              className="rounded-full w-max text-darkWhite "
+            >
+              <FaInstagram
+                size={34}
+                className="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 rounded-full p-1"
+              />
+            </Link>
+            <Link
+              target="_blank"
+              to={"https://www.twitter.com"}
+              className="rounded-full w-max text-darkWhite "
+            >
+              <FaXTwitter size={34} className="bg-black rounded-full p-1" />
+            </Link>
+          </div>
         </div>
         <div className="w-full pt-10">
           <form className="w-full flex flex-col gap-7" id="contact-us">

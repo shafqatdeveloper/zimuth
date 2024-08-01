@@ -44,6 +44,7 @@ const AboutCarousel = () => {
         spaceBetween={25}
         centeredSlides={true}
         speed={1000}
+        loop={true}
         autoplay={{
           delay: 6000,
           disableOnInteraction: false,
@@ -67,10 +68,14 @@ const AboutCarousel = () => {
                 alt={slide.heading}
                 className="w-full rounded-3xl h-full object-cover"
               />
-              <div className="absolute top-0 left-0 w-full h-full flex flex-col rounded-3xl justify-center items-center bg-white/30 bg-opacity-50">
-                <h1 className="text-white text-4xl">{slide.heading}</h1>
-                <p className="text-white">{slide.description}</p>
-                <button className="mt-4 px-4 py-2 bg-white text-black rounded">
+              <div className="absolute top-0 left-0 w-full h-full flex gap-6 flex-col rounded-3xl justify-center items-center bg-black/40 bg-opacity-50">
+                <h1 className="text-white text-4xl font-semibold">
+                  {slide.heading}
+                </h1>
+                <p className="text-white w-2/4 pt-3 text-center">
+                  {slide.description}
+                </p>
+                <button className="mt-4 px-4 py-2 bg-white text-black rounded-full">
                   Try now
                 </button>
               </div>
@@ -79,7 +84,7 @@ const AboutCarousel = () => {
         })}
       </Swiper>
       <div className="w-2/4">
-        <h1 className="text-4xl font-semibold text-center pt-12">
+        <h1 className="text-4xl font-semibold text-center pt-28">
           Visualize changes in sentiment. Map information across time.
         </h1>
       </div>
