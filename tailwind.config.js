@@ -16,6 +16,9 @@ export default {
         darkBlue: "#003dc4",
         darkPurple: "#251760",
       },
+      backgroundImage: {
+        "static-bg-img": "url('./src/assets/static-bg.jpg')",
+      },
     },
   },
   plugins: [],

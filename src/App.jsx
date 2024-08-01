@@ -34,7 +34,7 @@ const App = () => {
       <div
         style={{ fontSize: "0.5rem", lineHeight: "0.75rem" }}
         className={
-          location.pathname === "/"
+          location.pathname === "/" || location.pathname === "/about-us"
             ? "absolute bottom-3 right-4 flex items-center text-darkBlack gap-2 font-semibold z-10"
             : "absolute bottom-3 right-4 flex items-center text-darkBlack dark:text-darkWhite gap-2 font-semibold z-10"
         }

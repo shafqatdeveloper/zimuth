@@ -7,14 +7,14 @@ import Member3 from "../../assets/TeamMember3.png";
 
 const About = () => {
   return (
-    <div className="pt-16 w-full flex flex-col items-center justify-center">
+    <div className="pt-16 w-full flex flex-col items-center bg-static-bg-img justify-center bg-repeat-y bg-cover bg-fixed bg-opacity-30">
       <div className="w-full">
         <AboutCarousel />
       </div>
-      <div className="w-full flex flex-col items-center justify-center bg-[#FAFAFA] dark:bg-darkBlack text-darkBlack dark:text-darkWhite ">
+      <div className="w-full flex flex-col items-center justify-center text-darkBlack ">
         {/* Images Section */}
-        <div className="w-full flex flex-col items-center bg-[#FAFAFA] dark:bg-darkBlack text-darkBlack dark:text-darkWhite justify-center">
-          <div className="w-3/4 bg-gradient-to-b from-[#FAFAFA] via-[#FAFAFA] my-10 to-[#D1D1D1] rounded-b-xl flex items-center justify-center">
+        <div className="w-full flex flex-col items-center  justify-center">
+          <div className="w-3/4 rounded-b-xl flex items-center justify-center">
             <img src={GraphImage} alt="" />
           </div>
           <div className="w-2/4">
@@ -22,7 +22,7 @@ const About = () => {
               Visualize changes in sentiment. Map information across time.
             </h1>
           </div>
-          <div className="w-3/4 bg-gradient-to-b from-[#FAFAFA] via-[#FAFAFA] my-10 to-[#D1D1D1] rounded-b-xl flex items-center justify-center">
+          <div className="w-3/4  my-10  rounded-b-xl flex items-center justify-center">
             <img src={GraphImage} alt="" />
           </div>
           <div className="w-2/4">
@@ -30,12 +30,12 @@ const About = () => {
               Visualize changes in sentiment. Map information across time.
             </h1>
           </div>
-          <div className="w-3/4 bg-gradient-to-b from-[#FAFAFA] via-[#FAFAFA] my-10 to-[#D1D1D1] rounded-b-xl flex items-center justify-center">
+          <div className="w-3/4 my-10 rounded-b-xl flex items-center justify-center">
             <img src={GraphImage} alt="" />
           </div>
         </div>
         {/* Typegraphy */}
-        <div className="w-full flex flex-col items-center bg-[#FAFAFA] dark:bg-darkBlack text-darkBlack dark:text-darkWhite justify-center pt-28 gap-20">
+        <div className="w-full flex flex-col items-center   justify-center pt-28 gap-20">
           {/* Section-1 */}
           <div className="w-3/5 flex flex-col gap-4">
             <h6 className="text-center">Mission</h6>
@@ -66,7 +66,7 @@ const About = () => {
           </div>
         </div>
         {/* Alternative Typography */}
-        <div className="w-3/5 flex flex-col gap-20 pt-28 bg-[#FAFAFA] dark:bg-darkBlack text-darkBlack dark:text-darkWhite">
+        <div className="w-3/5 flex flex-col gap-20 pt-28  ">
           {/* Section-1 */}
           <div className="w-2/4 flex flex-col gap-5 self-start">
             <h6>Technology</h6>
@@ -100,7 +100,7 @@ const About = () => {
           </div>
         </div>
         {/* Team */}
-        <div className="w-2/4 pb-48 flex flex-col gap-20 bg-[#FAFAFA] dark:bg-darkBlack text-darkBlack dark:text-darkWhite pt-28">
+        <div className="w-2/4 pb-48 flex flex-col gap-20 pt-28">
           <h1 className="text-center text-3xl font-semibold">Team</h1>
           {/* Team Member 1 */}
           <div className="flex items-center gap-16 w-full">

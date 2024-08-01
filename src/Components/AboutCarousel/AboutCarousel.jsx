@@ -39,7 +39,7 @@ const aboutCarouselSlides = [
 
 const AboutCarousel = () => {
   return (
-    <div className="relative py-7 w-full flex flex-col gap-12 items-center bg-gradient-to-b from-[#FAFAFA] via-[#D9D9D9] to-[#D1D1D1] justify-center">
+    <div className="relative py-7 w-full flex flex-col gap-12 items-center  justify-center">
       <Swiper
         spaceBetween={25}
         centeredSlides={true}
