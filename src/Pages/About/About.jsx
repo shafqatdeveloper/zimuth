@@ -11,7 +11,7 @@ const About = () => {
       <div className="w-full">
         <AboutCarousel />
       </div>
-      <div className="w-full flex flex-col items-center justify-center text-darkBlack ">
+      <div className="w-full flex flex-col items-center justify-center bg-darkWhite text-darkBlack dark:bg-darkBlack dark:text-darkWhite">
         {/* Images Section */}
         <div className="w-full flex flex-col items-center  justify-center">
           <div className="w-3/4 rounded-b-xl flex items-center justify-center">
