@@ -7,13 +7,14 @@ import Member3 from "../../assets/TeamMember3.png";
 
 const About = () => {
   return (
-    <div className="pt-16 w-full flex flex-col items-center bg-static-bg-img justify-center bg-repeat-y bg-cover bg-fixed bg-opacity-30">
-      <div className="w-full">
+    <div className="relative pt-16 w-full flex flex-col items-center bg-static-bg-img justify-center bg-repeat-y bg-cover bg-fixed bg-opacity-30">
+      <div className="absolute inset-0 bg-black/20"></div> {/* Overlay */}
+      <div className="relative w-full">
         <AboutCarousel />
       </div>
-      <div className="w-full flex flex-col items-center justify-center bg-darkWhite text-darkBlack dark:bg-darkBlack dark:text-darkWhite">
+      <div className="relative w-full flex flex-col items-center justify-center text-darkWhite">
         {/* Images Section */}
-        <div className="w-full flex flex-col items-center  justify-center">
+        <div className="w-full flex flex-col items-center justify-center">
           <div className="w-3/4 rounded-b-xl flex items-center justify-center">
             <img src={GraphImage} alt="" />
           </div>
@@ -22,7 +23,7 @@ const About = () => {
               Visualize changes in sentiment. Map information across time.
             </h1>
           </div>
-          <div className="w-3/4  my-10  rounded-b-xl flex items-center justify-center">
+          <div className="w-3/4 my-10 rounded-b-xl flex items-center justify-center">
             <img src={GraphImage} alt="" />
           </div>
           <div className="w-2/4">
@@ -35,7 +36,7 @@ const About = () => {
           </div>
         </div>
         {/* Typegraphy */}
-        <div className="w-full flex flex-col items-center   justify-center pt-28 gap-20">
+        <div className="w-full flex flex-col items-center justify-center pt-28 gap-20">
           {/* Section-1 */}
           <div className="w-3/5 flex flex-col gap-4">
             <h6 className="text-center">Mission</h6>
@@ -66,7 +67,7 @@ const About = () => {
           </div>
         </div>
         {/* Alternative Typography */}
-        <div className="w-3/5 flex flex-col gap-20 pt-28  ">
+        <div className="w-3/5 flex flex-col gap-20 pt-28">
           {/* Section-1 */}
           <div className="w-2/4 flex flex-col gap-5 self-start">
             <h6>Technology</h6>

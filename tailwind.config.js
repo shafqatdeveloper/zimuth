@@ -17,7 +17,7 @@ export default {
         darkPurple: "#251760",
       },
       backgroundImage: {
-        "static-bg-img": "url('./src/assets/static-bg.jpg')",
+        "static-bg-img": "url('/src/assets/static-bg.jpg')",
       },
     },
   },

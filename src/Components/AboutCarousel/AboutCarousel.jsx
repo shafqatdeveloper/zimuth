@@ -84,7 +84,7 @@ const AboutCarousel = () => {
         })}
       </Swiper>
       <div className="w-2/4">
-        <h1 className="text-4xl font-semibold text-center pt-28">
+        <h1 className="text-4xl font-semibold text-center text-darkWhite pt-28">
           Visualize changes in sentiment. Map information across time.
         </h1>
       </div>
