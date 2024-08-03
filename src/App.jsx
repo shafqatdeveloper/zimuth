@@ -10,6 +10,7 @@ import ContactUs from "./Pages/Contact/ContactUs";
 import News from "./Pages/News/News";
 import Pricing from "./Pages/Pricing/Pricing";
 import TermsAndConditions from "./Pages/TermsAndConditons/TermsAndConditions";
+import SERP from "./Pages/SERP/SERP";
 
 const App = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -50,6 +51,7 @@ const App = () => {
         <Route path="/news" element={<News />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/search" element={<SERP />} />
       </Routes>
     </div>
   );

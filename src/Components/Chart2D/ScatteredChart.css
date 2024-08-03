@@ -1,0 +1,14 @@
+/* styles.css */
+.chart-container {
+    height:350px; /* 100% of the viewport height */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .chart-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+  

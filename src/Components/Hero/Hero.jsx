@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import whiteLogo from "../../assets/logo_vertical_white.png";
 import blackLogo from "../../assets/logo_vertical_black.png";
 import { ThemeContext } from "../Context/ThemeContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiCube } from "react-icons/hi2";
 import { useInView } from "react-intersection-observer";
 
@@ -18,6 +18,14 @@ const Hero = () => {
   const { theme } = useContext(ThemeContext);
   const [searchText, setSearchText] = useState("");
   const [isInputFocused, setIsInputFocused] = useState(false);
+  const navigate = useNavigate();
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      navigate(`/search?q=${searchText}`);
+    }
+  };
 
   return (
     <div className="w-full h-screen flex pt-24 justify-center bg-white dark:bg-darkBlack">
@@ -35,7 +43,14 @@ const Hero = () => {
             <div className="flex items-center gap-2">
               {trendingTopics.map((topic, index) => {
                 return (
-                  <Link key={index} className="">
+                  <p
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate(`/search?q=${topic}`);
+                    }}
+                    key={index}
+                    className="cursor-pointer"
+                  >
                     <motion.div
                       className="py-1 px-2 rounded-3xl capitalize bg-gradient-to-br from-[#99f1ee] via-[#dffffe] dark:via-[#015452] dark:text-darkWhite to-[#ffffff] dark:to-[#1e1e1e] text-darkBlack"
                       initial={{ opacity: 0 }}
@@ -49,17 +64,18 @@ const Hero = () => {
                     >
                       {topic}
                     </motion.div>
-                  </Link>
+                  </p>
                 );
               })}
             </div>
             <div className="pt-2 flex flex-col items-center gap-2">
-              <input
-                type="text"
+              <textarea
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
+                onKeyDown={handleKeyDown}
                 className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#202020] dark:placeholder-darkWhite bg-darkWhite"
                 placeholder="/ type something here"
+                rows="1"
               />
               <p className="text-xs">
                 Zimuth may make mistakes. Check important info.
