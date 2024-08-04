@@ -30,11 +30,7 @@ const Hero = () => {
   return (
     <div className="w-full h-screen flex pt-24 justify-center ">
       <div className="flex w-full flex-col items-center">
-        <img
-          src={theme === "dark" ? whiteLogo : blackLogo}
-          alt="Zimuth"
-          className="h-52 w-auto"
-        />
+        <img src={blackLogo} alt="Zimuth" className="h-52 w-auto" />
         <div className="lg:w-3/5 flex items-center justify-center">
           <div
             onMouseEnter={() => setIsInputFocused(true)}
@@ -74,10 +70,10 @@ const Hero = () => {
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#202020] dark:placeholder-darkWhite bg-white"
+                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-darkBlack dark:placeholder-darkWhite bg-white"
                 placeholder="/ type something here"
               />
-              <p className="text-xs">
+              <p className="text-xs text-darkBlack">
                 Zimuth may make mistakes. Check important info.
               </p>
             </div>

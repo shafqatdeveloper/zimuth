@@ -20,9 +20,11 @@ const App = () => {
       <Navbar />
       <button
         onClick={toggleTheme}
-        className={
-          "flex items-center fixed z-20 left-3 bottom-3 justify-center text-darkBlack dark:text-darkWhite rounded-md"
-        }
+        className={`flex items-center fixed z-20 left-3 bottom-3 justify-center ${
+          location.pathname === "/"
+            ? "text-darkWhite"
+            : "text-darkBlack dark:text-darkWhite"
+        } rounded-md`}
       >
         {theme === "dark" ? (
           <MdOutlineLightMode size={20} />
@@ -32,9 +34,11 @@ const App = () => {
       </button>
       <div
         style={{ fontSize: "0.5rem", lineHeight: "0.75rem" }}
-        className={
-          "absolute bottom-3 right-4 flex items-center text-darkBlack dark:text-darkWhite gap-2 font-semibold z-10"
-        }
+        className={`absolute bottom-3 right-4 flex items-center ${
+          location.pathname === "/"
+            ? "text-darkWhite"
+            : "text-darkBlack dark:text-darkWhite"
+        } gap-2 font-semibold z-10`}
       >
         <Link to={"/contact-us"}>Contact us</Link>
         <Link to={"/terms-and-conditions"}>Terms and Conditons</Link>

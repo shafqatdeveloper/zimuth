@@ -54,7 +54,7 @@ const Carousel = () => {
         <h2 className="text-start text-3xl font-semibold mb-12 relative">
           AI Search, Re-imagined
         </h2>
-        <div className="absolute top-0 right-32 flex space-x-4 text-gray-400 ">
+        <div className="absolute top-0 right-32 flex space-x-4 text-gray-500 ">
           <div className="swiper-button-prev cursor-pointer">
             <MdOutlineKeyboardArrowLeft size={45} className="pointer-expand" />
           </div>
