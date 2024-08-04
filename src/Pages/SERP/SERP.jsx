@@ -16,6 +16,7 @@ import {
 import TreeChart from "../../Components/TeeChart/TreeChart";
 import ScatteredChart from "../../Components/Chart2D/ScatteredChart";
 import SentimentTypo from "../../Components/SentimentTypgraphy/SentimentTypo";
+import GenericCorporate from "../../Components/GenericCorporate/GenericCorporate";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -32,6 +33,7 @@ const SERP = () => {
     useState("typography");
   const [selected3DChartSection, setSelected3DChartSection] =
     useState("3dChart");
+  const [sectionsExpaned, setsectionsExpaned] = useState(true);
   const handleMouseEnter = () => {
     setShowMenu(true);
   };
@@ -41,6 +43,9 @@ const SERP = () => {
   };
   const query = useQuery();
   const searchText = query.get("q");
+  const handleSectionsExpand = (newState) => {
+    setsectionsExpaned(newState);
+  };
   return (
     <div className="h-full w-full flex justify-center text-darkBlack bg-darkWhite dark:text-darkWhite dark:bg-darkBlack pt-16">
       <div className="w-4/5 pt-5">
@@ -175,9 +180,13 @@ const SERP = () => {
           </div>
         </div>
         {/* Summaries about Generic Corporation and Generic Corporation Sites */}
-        <div className="w-full flex items-start gap-1 pt-8">
-          <div className="w-3/4">
-            <Summary />
+        <div className="w-full flex items-start gap-1 pt-6">
+          <div className="w-3/4 pb-32">
+            <Summary
+              sectionsExpaned={sectionsExpaned}
+              handleSectionsExpand={handleSectionsExpand}
+            />
+            {sectionsExpaned && <GenericCorporate />}
           </div>
           <div className="w-1/4 bg-white rounded-lg border mb-10">
             {/* Images Section */}

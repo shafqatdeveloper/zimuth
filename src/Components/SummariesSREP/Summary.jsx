@@ -1,17 +1,36 @@
 import React from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import TooltipContent from "../TooltipContent/TooltipContent";
+import { FaGoogle } from "react-icons/fa";
 
-const Summary = () => {
+const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
+  const openCloseSections = () => {
+    handleSectionsExpand(!sectionsExpaned);
+  };
   return (
-    <div className="w-full pb-10">
+    <div className="w-full pb-10 ">
+      <ReactTooltip
+        className="!w-[380px] !h-[140px] !bg-white border !border-darkBlack !rounded-md"
+        place="right"
+        effect="solid"
+        id="generic-info"
+        offset={3}
+      >
+        <TooltipContent />
+      </ReactTooltip>
       {/* First Section Summaries about Generic Corporation */}
-      <div className="w-full">
+      <div className="w-full border-b border-b-black">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-semibold">
             Summaries about Generic Corporation
           </h1>
           {/* Right Side Information */}
-          <div className="flex items-center gap-4 text-sm">
+          <div
+            data-tooltip-id="generic-info"
+            data-tooltip-place="bottom"
+            className="flex items-center gap-4 text-sm"
+          >
             <h1 className="font-semibold">Metrics</h1>
             <div className="w-[2px] h-8 bg-gray-600"></div>
             {/* Word Count */}
@@ -36,13 +55,17 @@ const Summary = () => {
                 <span className="self-end pl-7">-0.9/[-1.1]</span>
               </h1>
             </div>
-            <div className="text-gray-500">
-              <IoIosArrowDown size={28} />
+            <div className="text-gray-500 cursor-pointer">
+              {sectionsExpaned ? (
+                <IoIosArrowUp onClick={openCloseSections} size={28} />
+              ) : (
+                <IoIosArrowDown onClick={openCloseSections} size={28} />
+              )}
             </div>
           </div>
         </div>
         {/* Typography */}
-        <div className="py-9 flex flex-col gap-7 border-b border-b-black">
+        <div className="py-9 flex flex-col gap-7">
           <div className="flex items-center gap-[93px] text-sm">
             <h1 className="font-semibold">Info</h1>
             <ol className="list-disc">
@@ -68,6 +91,54 @@ const Summary = () => {
             </ol>
           </div>
         </div>
+        {!sectionsExpaned && (
+          <div className="pb-6 flex items-center gap-5">
+            <div className="flex flex-col items-center gap-0.5">
+              <div className="bg-white p-1 border border-darkBlack rounded-lg text-red-500 w-max">
+                <FaGoogle />
+              </div>
+              <p
+                style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
+                className="text-darkBlack font-medium"
+              >
+                Generic Corp...
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-0.5">
+              <div className="bg-white p-1 border border-darkBlack rounded-lg text-red-500 w-max">
+                <FaGoogle />
+              </div>
+              <p
+                style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
+                className="text-darkBlack font-medium"
+              >
+                Generic Corp...
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-0.5">
+              <div className="bg-white p-1 border border-darkBlack rounded-lg text-red-500 w-max">
+                <FaGoogle />
+              </div>
+              <p
+                style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
+                className="text-darkBlack font-medium"
+              >
+                Generic Corp...
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-0.5">
+              <div className="bg-white p-1 border border-darkBlack rounded-lg text-red-500 w-max">
+                <FaGoogle />
+              </div>
+              <p
+                style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
+                className="text-darkBlack font-medium"
+              >
+                Generic Corp...
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
