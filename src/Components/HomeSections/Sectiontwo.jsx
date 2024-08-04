@@ -6,7 +6,7 @@ const SectionTwo = () => {
     <div className="w-full h-screen flex items-center justify-center">
       <div className="flex w-3/4 gap-[40px]">
         <div className="w-2/4 flex justify-start items-start">
-          <img src={SectionImage} alt="Section" className="w-full h-auto" />
+          <img src={SectionImage} alt="Section" className="w-[92%] h-auto" />
         </div>
         <div className="w-2/4 flex flex-col justify-center pl-16">
           <h1 className="text-3xl font-semibold">Results,</h1>
