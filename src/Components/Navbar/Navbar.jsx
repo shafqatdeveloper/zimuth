@@ -34,11 +34,11 @@ const Navbar = () => {
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="w-3/4">
+      <nav className="w-5/6">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between h-16 items-center">
             <div className="flex">
-              <Link to={"/"} className="flex-shrink-0 flex items-center">
+              <Link to={"/"} className="flex items-center">
                 <img
                   className="h-16 w-auto"
                   src={theme === "dark" ? WhiteLogo : BlackLogo}
@@ -46,27 +46,25 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="hidden  md:flex md:items-center md:space-x-10">
+            <div className="hidden md:flex md:items-center md:space-x-10">
               <Link
                 to="/about-us"
-                className="text-darkBlack dark:text-darkWhite hover:text-gray-900 flex items-center gap-1"
+                className="text-darkBlack dark:text-darkWhite hover:bg-gray-300 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1"
               >
                 <IoIosInformationCircle />
                 About Us
               </Link>
               <Link
                 to="/news"
-                className="text-darkBlack dark:text-darkWhite hover:text-gray-900 flex items-center gap-1"
+                className="text-darkBlack dark:text-darkWhite hover:bg-gray-300 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1"
               >
-                {" "}
                 <FaRegNewspaper />
                 News
               </Link>
               <Link
                 to="/pricing"
-                className="text-darkBlack dark:text-darkWhite hover:text-gray-900 flex items-center gap-1"
+                className="text-darkBlack dark:text-darkWhite hover:bg-gray-300 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1"
               >
-                {" "}
                 <IoPricetags />
                 Pricing
               </Link>

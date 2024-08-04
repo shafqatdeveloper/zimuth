@@ -6,15 +6,15 @@ import SectionTwo from "../../Components/HomeSections/Sectiontwo";
 import SectionThree from "../../Components/HomeSections/SectionThree";
 import SectionFour from "../../Components/HomeSections/SectionFour";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Home.css";
+// import "./Home.css";
 import { useInView } from "react-intersection-observer";
 
 const Home = () => {
   const [ref, inView] = useInView({ triggerOnce: false });
 
   return (
-    <div className="h-full w-full  text-darkBlack dark:text-white">
-      <div className="gradient-background pt-8">
+    <div className="h-full w-full  text-darkBlack dark:text-white bg-gray-200 dark:bg-darkBlack">
+      <div className="pt-8">
         <Hero />
         <AnimatePresence>
           {inView && (

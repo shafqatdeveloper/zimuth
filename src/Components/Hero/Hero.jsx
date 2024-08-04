@@ -28,19 +28,20 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full h-screen flex pt-24 justify-center bg-white dark:bg-darkBlack">
+    <div className="w-full h-screen flex pt-24 justify-center ">
       <div className="flex w-full flex-col items-center">
         <img
           src={theme === "dark" ? whiteLogo : blackLogo}
           alt="Zimuth"
-          className="h-32 w-auto"
+          className="h-52 w-auto"
         />
-        <div className="w-3/4 lg:w-3/5">
+        <div className="lg:w-3/5 flex items-center justify-center">
           <div
             onMouseEnter={() => setIsInputFocused(true)}
             onMouseLeave={() => setIsInputFocused(false)}
+            className="w-4/5 flex items-center justify-center flex-col"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex w-full items-center gap-2">
               {trendingTopics.map((topic, index) => {
                 return (
                   <p
@@ -68,46 +69,16 @@ const Hero = () => {
                 );
               })}
             </div>
-            <div className="pt-2 flex flex-col items-center gap-2">
-              <textarea
+            <div className="pt-2 w-full flex flex-col items-center gap-3">
+              <input
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#202020] dark:placeholder-darkWhite bg-darkWhite"
+                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#202020] dark:placeholder-darkWhite bg-white"
                 placeholder="/ type something here"
-                rows="1"
               />
               <p className="text-xs">
                 Zimuth may make mistakes. Check important info.
-              </p>
-            </div>
-          </div>
-          {/* Boxes */}
-          <div className="w-full grid mt-4 grid-cols-2 gap-3">
-            {/* Box 1 */}
-            <div className="bg-darkWhite dark:bg-black rounded-xl px-3 py-5  flex flex-col gap-2">
-              <div className="bg-darkBlue w-max p-1 rounded-md text-darkCyan">
-                <HiCube size={25} />
-              </div>
-              <h1 className="font-bold">
-                Global Financial Market reacts to US Debt Ceiling Agreement
-              </h1>
-              <p className="text-xs">
-                Global financial markets surged following the announcement of a
-                last-minute deal to raise the US debt ceiling, averting a....
-              </p>
-            </div>
-            {/* Box 2 */}
-            <div className="bg-darkWhite dark:bg-black rounded-xl px-3 py-5  flex flex-col gap-2">
-              <div className="bg-black dark:bg-darkBlack w-max p-1 rounded-md text-darkCyan">
-                <HiCube size={25} />
-              </div>
-              <h1 className="font-bold">
-                Global Financial Market reacts to US Debt Ceiling Agreement
-              </h1>
-              <p className="text-xs">
-                Global financial markets surged following the announcement of a
-                last-minute deal to raise the US debt ceiling, averting a....
               </p>
             </div>
           </div>

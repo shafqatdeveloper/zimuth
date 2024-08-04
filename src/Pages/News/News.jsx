@@ -80,7 +80,7 @@ const News = () => {
   return (
     <div className="h-full w-full bg-darkWhite text-darkBlack dark:bg-darkBlack dark:text-darkWhite pb-32">
       <div className="w-full h-full flex pt-24 justify-center">
-        <div className="w-3/4">
+        <div className="w-4/5">
           {/* Heading */}
           <div className="w-full flex items-center justify-between">
             <h1 className="text-xl font-bold tracking-wide font-sans">News</h1>

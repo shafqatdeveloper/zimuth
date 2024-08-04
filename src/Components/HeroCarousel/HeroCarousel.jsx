@@ -46,63 +46,62 @@ const Carousel = () => {
       slideDesc: "Avoid Duplication and Content farms.",
       slideLink: "/link",
     },
-    {
-      slideImg: Img2,
-      slideHeading: "Efficiency",
-      slideDesc: "Avoid Duplication and Content farms.",
-      slideLink: "/link",
-    },
   ];
 
   return (
-    <div className="container w-[87%] mx-auto relative mt-20 text-darkBlack">
-      <h2 className="text-start text-3xl font-semibold mb-12 relative">
-        AI Search, Re-imagined
-      </h2>
-      <div className="absolute top-0 right-48 flex space-x-8 text-gray-400 ">
-        <div className="swiper-button-prev cursor-pointer">
-          <MdOutlineKeyboardArrowLeft size={45} className="pointer-expand" />
+    <div className="container w-full relative mt-20">
+      <div className="pl-32">
+        <h2 className="text-start text-3xl font-semibold mb-12 relative">
+          AI Search, Re-imagined
+        </h2>
+        <div className="absolute top-0 right-32 flex space-x-4 text-gray-400 ">
+          <div className="swiper-button-prev cursor-pointer">
+            <MdOutlineKeyboardArrowLeft size={45} className="pointer-expand" />
+          </div>
+          <div className="swiper-button-next cursor-pointer">
+            <MdOutlineKeyboardArrowRight size={45} className="pointer-expand" />
+          </div>
         </div>
-        <div className="swiper-button-next cursor-pointer">
-          <MdOutlineKeyboardArrowRight size={45} className="pointer-expand" />
-        </div>
-      </div>
-      <div className="relative">
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={17}
-          loop={true}
-          slidesPerView={3.5}
-          direction="horizontal"
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-        >
-          {carouselSlides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-200 hover:scale-105">
-                <img
-                  src={slide.slideImg}
-                  alt={slide.slideHeading}
-                  className="rounded-lg shadow-lg w-full h-[25.5rem] object-cover"
-                />
-                <div className="absolute top-0 left-0 p-6 h-full bg-white/20 text-white rounded-lg w-full">
-                  <h3 className="">{slide.slideHeading}</h3>
-                  <p className="text-xl font-bold line-clamp-none">
-                    {slide.slideDesc}
-                  </p>
-                  <Link to={slide.slideLink}>
-                    <CgArrowRight
-                      size={34}
-                      className="absolute bottom-4 right-4 text-white pointer-expand"
+        <div className="relative">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={17}
+            slidesPerView={3.5}
+            direction="horizontal"
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+          >
+            {carouselSlides.map((slide, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative overflow-hidden rounded-lg cursor-pointer group">
+                  <div className="transition-transform duration-300 transform group-hover:scale-110">
+                    <img
+                      src={slide.slideImg}
+                      alt={slide.slideHeading}
+                      className="w-full h-[28rem] object-cover"
                     />
-                  </Link>
+                    <div className="absolute inset-0 bg-white/20 p-6 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-white">{slide.slideHeading}</h3>
+                        <p className="text-xl font-bold text-white">
+                          {slide.slideDesc}
+                        </p>
+                      </div>
+                      <Link to={slide.slideLink} className="self-end">
+                        <CgArrowRight
+                          size={34}
+                          className="text-white pointer-expand"
+                        />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </div>
   );

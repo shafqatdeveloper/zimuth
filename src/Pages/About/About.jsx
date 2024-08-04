@@ -9,42 +9,42 @@ const About = () => {
   return (
     <div className="relative w-full flex flex-col items-center bg-static-bg-img justify-center bg-repeat-y bg-cover bg-fixed">
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 bg-white/40 dark:bg-black/40"></div>
       <div className="relative w-full">
         <AboutCarousel />
       </div>
-      <div className="relative w-full flex flex-col items-center justify-center text-darkWhite">
+      <div className="relative w-full flex flex-col items-center justify-center text-darkBlack dark:text-white">
         {/* Images Section */}
         <div className="w-full flex flex-col items-center justify-center">
-          <div className="w-3/4 rounded-b-xl flex items-center justify-center">
-            <img src={GraphImage} alt="" />
+          <div className="w-3/4 rounded-b-xl bg-gradient-to-b from-transparent py-2  to-[#DFDFDF] flex items-center justify-center">
+            <img src={GraphImage} className="w-3/5" alt="" />
           </div>
           <div className="w-2/4">
             <h1 className="text-4xl font-semibold text-center pt-28">
               Visualize changes in sentiment. Map information across time.
             </h1>
           </div>
-          <div className="w-3/4 my-10 rounded-b-xl flex items-center justify-center">
-            <img src={GraphImage} alt="" />
+          <div className="w-3/4 my-10 rounded-b-xl flex items-center justify-center bg-gradient-to-b from-transparent py-2  to-[#DFDFDF]">
+            <img src={GraphImage} className="w-3/5" alt="" />
           </div>
           <div className="w-2/4">
             <h1 className="text-4xl font-semibold text-center pt-28">
               Visualize changes in sentiment. Map information across time.
             </h1>
           </div>
-          <div className="w-3/4 my-10 rounded-b-xl flex items-center justify-center">
-            <img src={GraphImage} alt="" />
+          <div className="w-3/4 my-10 rounded-b-xl flex items-center justify-center bg-gradient-to-b from-transparent py-2  to-[#DFDFDF]">
+            <img src={GraphImage} className="w-3/5" alt="" />
           </div>
         </div>
         {/* Typegraphy */}
         <div className="w-full flex flex-col items-center justify-center pt-28 gap-20">
           {/* Section-1 */}
           <div className="w-3/5 flex flex-col gap-4">
-            <h6 className="text-center">Mission</h6>
-            <h1 className="text-center pt-3 text-3xl font-semibold">
+            <h6 className="text-center text-xl">Mission</h6>
+            <h1 className="text-center pt-3 text-5xl font-semibold">
               Empowering Human Ideas
             </h1>
-            <p className="text-center text-pretty">
+            <p className="text-center text-pretty text-lg leading-relaxed">
               Zimuth is a tool that collates and preserves human ideas.
               Providing precise, unbiased results in immaculate format and
               unprecedented depth. Developed by researchers for researchers,
@@ -54,11 +54,11 @@ const About = () => {
           </div>
           {/* Section-2 */}
           <div className="w-3/5 flex flex-col gap-4">
-            <h6 className="text-center">Vision</h6>
-            <h1 className="text-center pt-3 text-3xl font-semibold">
+            <h6 className="text-center text-xl">Vision</h6>
+            <h1 className="text-center pt-3 text-5xl font-semibold">
               AI without Sacrifices
             </h1>
-            <p className="text-center text-pretty">
+            <p className="text-center text-pretty text-lg leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               at porttitor sem. Aliquam erat volutpat. Donec placerat nisl
               magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit
@@ -71,7 +71,7 @@ const About = () => {
         <div className="w-3/5 flex flex-col gap-20 pt-28">
           {/* Section-1 */}
           <div className="w-2/4 flex flex-col gap-5 self-start">
-            <h6>Technology</h6>
+            <h6 className="text-xl">Technology</h6>
             <h1 className="text-3xl font-semibold">Large Language Models</h1>
             <p className="text-justify">
               Summary algorithm based on open-source projects like llama_cpp and
@@ -102,8 +102,8 @@ const About = () => {
           </div>
         </div>
         {/* Team */}
-        <div className="w-2/4 pb-48 flex flex-col gap-20 pt-28">
-          <h1 className="text-center text-3xl font-semibold">Team</h1>
+        <div className="w-2/5 pb-48 flex flex-col gap-20 pt-28 leading-relaxed">
+          <h1 className="text-center text-4xl font-semibold">Team</h1>
           {/* Team Member 1 */}
           <div className="flex items-center gap-16 w-full">
             {/* Image Side */}

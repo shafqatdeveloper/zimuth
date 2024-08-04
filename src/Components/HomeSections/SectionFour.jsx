@@ -7,19 +7,19 @@ import { Link } from "react-router-dom";
 
 const SectionFour = () => {
   return (
-    <div className="w-full h-screen flex items-center justify-center relative  text-darkBlack">
-      <div className="flex w-4/5">
-        <div className="w-2/4 flex justify-end">
-          <img src={SectionImage} alt="Section" className="w-3/4 h-auto" />
+    <div className="w-full h-screen flex items-center justify-center">
+      <div className="flex w-3/4 gap-[40px]">
+        <div className="w-2/4 flex justify-start items-start">
+          <img src={SectionImage} alt="Section" className="w-full h-auto" />
         </div>
-        <div className="w-2/4 flex flex-col justify-center pl-14">
+        <div className="w-2/4 flex flex-col justify-center pl-16">
           <h1 className="text-3xl flex flex-col font-semibold mb-7">
             Keeping your data <span>yours and yours alone</span>
           </h1>
           <h3 className="italic font-semibold mb-7">
             What if AI respected your privacy?
           </h3>
-          <p className="text-sm w-4/5 text-pretty flex flex-col">
+          <p className="text-sm w-11/12 text-pretty">
             <span>Zimuth has a strict no-user data sale policy:</span>
             we never sell your search or chat data. Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat

@@ -43,7 +43,7 @@ const SERP = () => {
   const searchText = query.get("q");
   return (
     <div className="h-full w-full flex justify-center text-darkBlack bg-darkWhite dark:text-darkWhite dark:bg-darkBlack pt-16">
-      <div className="w-5/6 pt-5">
+      <div className="w-4/5 pt-5">
         {/* form */}
         <div className="w-2/4">
           <form className="w-full">

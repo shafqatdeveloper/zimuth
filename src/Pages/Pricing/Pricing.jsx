@@ -6,12 +6,10 @@ import { GrDocument } from "react-icons/gr";
 const Pricing = () => {
   return (
     <div className="w-full h-full flex justify-center text-darkBlack bg-darkWhite dark:text-white dark:bg-darkBlack">
-      <div className="w-3/4 py-28">
+      <div className="w-4/5 py-28">
         {/* Heading */}
         <div className="">
-          <h1 className="text-xl font-bold tracking-wide font-sans pl-6">
-            Pricing
-          </h1>
+          <h1 className="text-xl font-bold tracking-wide font-sans">Pricing</h1>
         </div>
         {/* Pricing */}
         <div className="w-full grid border-b pb-6 border-b-black dark:border-b-white grid-cols-3 gap-1 pt-10">

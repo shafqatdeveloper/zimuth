@@ -21,9 +21,7 @@ const App = () => {
       <button
         onClick={toggleTheme}
         className={
-          location.pathname === "/"
-            ? "flex items-center absolute z-20 left-3 bottom-3 justify-center text-darkBlack rounded-md"
-            : "flex items-center absolute z-20 left-3 bottom-3 justify-center text-darkBlack dark:text-white rounded-md"
+          "flex items-center fixed z-20 left-3 bottom-3 justify-center text-darkBlack dark:text-darkWhite rounded-md"
         }
       >
         {theme === "dark" ? (
@@ -35,9 +33,7 @@ const App = () => {
       <div
         style={{ fontSize: "0.5rem", lineHeight: "0.75rem" }}
         className={
-          location.pathname === "/" || location.pathname === "/about-us"
-            ? "absolute bottom-3 right-4 flex items-center text-darkBlack gap-2 font-semibold z-10"
-            : "absolute bottom-3 right-4 flex items-center text-darkBlack dark:text-darkWhite gap-2 font-semibold z-10"
+          "absolute bottom-3 right-4 flex items-center text-darkBlack dark:text-darkWhite gap-2 font-semibold z-10"
         }
       >
         <Link to={"/contact-us"}>Contact us</Link>
