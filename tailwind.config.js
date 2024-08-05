@@ -11,7 +11,7 @@ export default {
         cyan80: "#33e2dd",
         cyan100: "#00dbd5",
         darkBlack: "#31363f",
-        darkWhite: "#efefef",
+        darkWhite: "#FAFAFA",
         darkCyan: "#00dbd5",
         darkBlue: "#003dc4",
         darkPurple: "#251760",
