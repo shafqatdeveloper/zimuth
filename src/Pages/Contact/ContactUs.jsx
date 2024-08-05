@@ -14,7 +14,7 @@ const ContactUs = () => {
   const [topic, setTopic] = useState("");
   const [detail, setDetail] = useState("");
   return (
-    <div className="h-screen w-full flex items-start pt-24 justify-center bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-darkWhite">
+    <div className="min-h-screen w-full flex items-start pt-24 justify-center bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-darkWhite">
       <div className="w-4/5">
         <div className="w-full flex items-center justify-between">
           <h1 className="text-xl font-bold tracking-wide font-sans">

@@ -22,14 +22,14 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
       {/* First Section Summaries about Generic Corporation */}
       <div className="w-full border-b border-b-black">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-semibold">
+          <h1 className="text-sm lg:text-base font-semibold">
             Summaries about Generic Corporation
           </h1>
           {/* Right Side Information */}
           <div
             data-tooltip-id="generic-info"
             data-tooltip-place="bottom"
-            className="flex items-center gap-4 text-sm"
+            className="flex items-center gap-2 text-xs"
           >
             <h1 className="font-semibold">Metrics</h1>
             <div className="w-[2px] h-8 bg-gray-600"></div>

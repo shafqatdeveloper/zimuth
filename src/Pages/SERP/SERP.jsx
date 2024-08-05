@@ -47,15 +47,15 @@ const SERP = () => {
     setsectionsExpaned(newState);
   };
   return (
-    <div className="h-full w-full flex justify-center text-darkBlack bg-darkWhite dark:text-darkWhite dark:bg-darkBlack pt-16">
+    <div className="h-full w-full flex justify-center text-darkBlack bg-darkWhite dark:text-darkWhite dark:bg-darkBlack pt-24">
       <div className="w-4/5 pt-5">
         {/* form */}
-        <div className="w-2/4">
+        <div className="w-2/5">
           <form className="w-full">
-            <div className="w-full border flex justify-between items-center px-2 border-darkBlack dark:border-darkWhite rounded-md">
+            <div className="w-full border flex justify-between items-center px-2 border-darkBlack bg-white dark:bg-black dark:border-darkWhite rounded-md">
               <input
                 type="text"
-                className="w-full p-1 outline-none focus:outline-none bg-transparent"
+                className="w-full p-2 outline-none focus:outline-none bg-transparent"
                 placeholder="/"
               />
               <IoMdSettings />
@@ -69,8 +69,9 @@ const SERP = () => {
             <button
               onClick={() => setSelectedPageType("Technical")}
               className={
-                selectedPageType === "Technical" &&
-                "text-cyan80 border-b-2 border-b-cyan80 py-2"
+                selectedPageType === "Technical"
+                  ? "text-cyan80 border-b-2 border-b-cyan80 py-2 transition-all"
+                  : "py-2 border-b border-b-transparent transition-all"
               }
             >
               Technical
@@ -78,8 +79,9 @@ const SERP = () => {
             <button
               onClick={() => setSelectedPageType("Acedamic")}
               className={
-                selectedPageType === "Acedamic" &&
-                "text-cyan80 border-b-2 border-b-cyan80 py-2"
+                selectedPageType === "Acedamic"
+                  ? "text-cyan80 border-b-2 border-b-cyan80 py-2 transition-all"
+                  : "py-2 border-b border-b-transparent transition-all"
               }
             >
               Acedamic
@@ -188,7 +190,7 @@ const SERP = () => {
             />
             {sectionsExpaned && <GenericCorporate />}
           </div>
-          <div className="w-1/4 bg-white rounded-lg border mb-10">
+          <div className="w-1/4 bg-white rounded-lg border border-gray-400 shadow-md shadow-gray-300 mb-10">
             {/* Images Section */}
             <div
               className={

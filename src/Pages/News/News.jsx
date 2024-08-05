@@ -127,19 +127,21 @@ const News = () => {
             >
               <div className="flex flex-col pt-10 gap-7">
                 {newsItems.map((item, index) => (
-                  <div className="flex gap-8 pt-6" key={index}>
-                    <h6 className="text-sm self-center">{item.date}</h6>
-                    <div className="flex flex-col gap-5">
-                      <h1 className="font-bold tracking-wide">
-                        {item.headline}
-                      </h1>
-                      <img
-                        src={item.img}
-                        alt="News Image"
-                        className="w-32 h-32"
-                      />
+                  <div>
+                    <h1 className="font-bold pl-44 tracking-wide">
+                      {item.headline}
+                    </h1>
+                    <div className="flex gap-8 xl:gap-12 pt-6" key={index}>
+                      <h6 className="text-xs min-w-24">{item.date}</h6>
+                      <div className="flex flex-col gap-5">
+                        <img
+                          src={item.img}
+                          alt="News Image"
+                          className="w-32 h-32"
+                        />
+                      </div>
+                      <p className="self-start">{item.description}</p>
                     </div>
-                    <p className="self-center">{item.description}</p>
                   </div>
                 ))}
               </div>

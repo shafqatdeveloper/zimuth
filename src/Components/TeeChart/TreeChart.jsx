@@ -1,6 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { hierarchy, tree } from "d3-hierarchy";
+import { FaExpandAlt } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 
 const data = {
   name: "Outdoor Spring Activities",
@@ -41,13 +43,15 @@ const data = {
 
 const D3Tree = () => {
   const d3Container = useRef(null);
+  const d3ModalContainer = useRef(null);
+  const [expandSection, setExpandSection] = useState(false);
 
-  useEffect(() => {
+  const drawTree = (container) => {
     // Clear previous content
-    d3.select(d3Container.current).select("svg").remove();
+    d3.select(container).select("svg").remove();
 
-    const containerWidth = d3Container.current.clientWidth;
-    const containerHeight = d3Container.current.clientHeight;
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
 
     // Set width and height based on container dimensions
     const width = containerWidth;
@@ -60,7 +64,7 @@ const D3Tree = () => {
     treeLayout(root);
 
     const svg = d3
-      .select(d3Container.current)
+      .select(container)
       .append("svg")
       .attr("width", width)
       .attr("height", height)
@@ -127,18 +131,58 @@ const D3Tree = () => {
       .clone(true)
       .lower()
       .attr("stroke", "white");
+  };
+
+  useEffect(() => {
+    if (d3Container.current) {
+      drawTree(d3Container.current);
+    }
   }, []);
 
+  useEffect(() => {
+    if (expandSection && d3ModalContainer.current) {
+      drawTree(d3ModalContainer.current);
+    }
+  }, [expandSection]);
+
   return (
-    <div
-      ref={d3Container}
-      style={{
-        width: "100%",
-        height: "100%",
-        overflow: "hidden", // Hide overflow to allow zoom and pan
-        border: "1px solid #ccc",
-      }}
-    />
+    <div className="w-full h-full relative">
+      <div className="absolute top-2.5 right-2.5 z-10">
+        <FaExpandAlt
+          onClick={() => setExpandSection(true)}
+          className="text-gray-500 cursor-pointer"
+        />
+      </div>
+      <div
+        ref={d3Container}
+        style={{
+          width: "100%",
+          height: "100%",
+          overflow: "hidden", // Hide overflow to allow zoom and pan
+          border: "1px solid #ccc",
+        }}
+      />
+      {expandSection && (
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative bg-white w-11/12 h-5/6 rounded-md shadow-md shadow-black/30 flex flex-col justify-center items-center p-6">
+            <AiOutlineClose
+              onClick={() => setExpandSection(false)}
+              className="cursor-pointer absolute top-4 right-4 text-gray-500 z-50"
+              size={24}
+            />
+            <div
+              ref={d3ModalContainer}
+              style={{
+                width: "100%",
+                height: "100%",
+                overflow: "hidden", // Hide overflow to allow zoom and pan
+                border: "1px solid #ccc",
+              }}
+            />
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
