@@ -74,7 +74,7 @@ const Hero = () => {
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-black dark:placeholder-darkWhite bg-white"
+                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#22262b] dark:placeholder-darkWhite bg-white"
                 placeholder="/ type something here"
               />
               <p className="text-xs text-darkBlack">
