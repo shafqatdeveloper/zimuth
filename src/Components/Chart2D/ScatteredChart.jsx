@@ -140,7 +140,7 @@ const ScatterPlot = () => {
               onClick={() => setExpandSection(false)}
               className="cursor-pointer absolute top-4 right-4 text-gray-500 z-50"
             />
-            <ResponsiveContainer width="100%" height={250}>
+            <ResponsiveContainer width="100%" height={400}>
               <ScatterChart
                 margin={{ top: 20, right: 10, bottom: 20, left: -30 }}
               >
@@ -171,9 +171,8 @@ const ScatterPlot = () => {
                     display: "flex",
                     flexDirection: "row",
                     justifyContent: "center",
-                    fontSize: "8px",
-                    gap: "4px",
-                    paddingLeft: "40px",
+                    fontSize: "14px",
+                    gap: "20px",
                   }}
                 />
                 {["Group 1", "Group 2", "Group 3", "Group 4", "Group 5"].map(

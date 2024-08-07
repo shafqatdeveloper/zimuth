@@ -49,7 +49,7 @@ const Hero = () => {
                     className="cursor-pointer"
                   >
                     <motion.div
-                      className="py-1 px-2 rounded-3xl capitalize bg-gradient-to-br from-[#99f1ee] via-[#dffffe] dark:via-[#015452] dark:text-darkWhite to-[#ffffff] dark:to-[#1e1e1e] text-darkBlack"
+                      className="py-1 px-2 rounded-3xl capitalize bg-gradient-to-br from-[#99f1ee] via-[#dffffe] dark:via-[#015452] dark:text-darkWhite to-[#edecec] dark:to-[#1e1e1e] text-darkBlack"
                       initial={{ opacity: 0 }}
                       animate={
                         isInputFocused ? { x: 0, opacity: 1 } : { opacity: 0 }
@@ -70,7 +70,7 @@ const Hero = () => {
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-darkBlack dark:placeholder-darkWhite bg-white"
+                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-darkBlack dark:placeholder-darkWhite bg-gray-200"
                 placeholder="/ type something here"
               />
               <p className="text-xs text-darkBlack">

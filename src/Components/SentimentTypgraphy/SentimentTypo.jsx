@@ -31,14 +31,14 @@ const data = [
 
 const SentimentTypo = () => {
   return (
-    <Box className="w-full h-full overflow-y-auto overflow-x-hidden">
+    <Box className="w-full h-full overflow-y-auto overflow-x-hidden text-darkBlack">
       <Timeline position="alternate">
         {data.map((item, index) => (
           <TimelineItem key={index}>
             {index % 2 === 0 ? (
               <TimelineOppositeContent>
                 <span
-                  className="text-xs text-gray-500"
+                  className="text-xs "
                   style={{ textDecoration: "underline" }}
                 >
                   {item.date}
@@ -48,7 +48,7 @@ const SentimentTypo = () => {
             ) : (
               <TimelineContent>
                 <span
-                  className="text-xs text-gray-500"
+                  className="text-xs"
                   style={{ textDecoration: "underline" }}
                 >
                   {item.date}

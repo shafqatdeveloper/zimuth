@@ -13,7 +13,7 @@ const Home = () => {
   const [ref, inView] = useInView({ triggerOnce: false });
 
   return (
-    <div className="h-full w-full  text-darkBlack dark:text-white bg-gradient-to-b from-darkWhite via-[#7263b0] to-[#251760] dark:bg-darkBlack">
+    <div className="h-full w-full  text-darkBlack dark:text-white bg-darkWhite">
       <div className="pt-8">
         <Hero />
         <AnimatePresence>
@@ -27,14 +27,16 @@ const Home = () => {
             />
           )}
         </AnimatePresence>
-        <div ref={ref}>
-          <HeroCarousel />
-        </div>
-        <div className="text-darkWhite">
-          <SectionOne />
-          <SectionTwo />
-          <SectionThree />
-          <SectionFour />
+        <div className="dark:bg-gradient-to-b from-darkWhite via-[#7263b0] to-[#251760] text-darkBlack">
+          <div ref={ref} className="w-full">
+            <HeroCarousel />
+          </div>
+          <div className="dark:text-white">
+            <SectionOne />
+            <SectionTwo />
+            <SectionThree />
+            <SectionFour />
+          </div>
         </div>
       </div>
     </div>

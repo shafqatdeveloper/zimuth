@@ -49,9 +49,9 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="container w-full relative mt-20">
-      <div className="pl-32">
-        <h2 className="text-start text-3xl font-semibold mb-12 relative">
+    <div className="w-full relative mt-20">
+      <div className="pl-32 w-full">
+        <h2 className="text-start text-3xl font-semibold mb-12">
           AI Search, Re-imagined
         </h2>
         <div className="absolute top-0 right-32 flex space-x-4 text-gray-500 ">
@@ -74,28 +74,26 @@ const Carousel = () => {
             }}
           >
             {carouselSlides.map((slide, index) => (
-              <SwiperSlide key={index}>
-                <div className="relative overflow-hidden rounded-lg cursor-pointer group">
-                  <div className="transition-transform duration-300 transform group-hover:scale-110">
-                    <img
-                      src={slide.slideImg}
-                      alt={slide.slideHeading}
-                      className="w-full h-[28rem] object-cover"
-                    />
-                    <div className="absolute inset-0 bg-white/20 p-6 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-white">{slide.slideHeading}</h3>
-                        <p className="text-xl font-bold text-white">
-                          {slide.slideDesc}
-                        </p>
-                      </div>
-                      <Link to={slide.slideLink} className="self-end">
-                        <CgArrowRight
-                          size={34}
-                          className="text-white pointer-expand"
-                        />
-                      </Link>
+              <SwiperSlide key={index} className="py-4 px-2">
+                <div className="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-[1.025] hover:z-10">
+                  <img
+                    src={slide.slideImg}
+                    alt={slide.slideHeading}
+                    className="w-full h-[28rem] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-white/20 p-6 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-white">{slide.slideHeading}</h3>
+                      <p className="text-xl font-bold text-white">
+                        {slide.slideDesc}
+                      </p>
                     </div>
+                    <Link to={slide.slideLink} className="self-end">
+                      <CgArrowRight
+                        size={34}
+                        className="text-white pointer-expand"
+                      />
+                    </Link>
                   </div>
                 </div>
               </SwiperSlide>

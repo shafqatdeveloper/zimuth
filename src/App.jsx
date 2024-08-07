@@ -11,6 +11,7 @@ import News from "./Pages/News/News";
 import Pricing from "./Pages/Pricing/Pricing";
 import TermsAndConditions from "./Pages/TermsAndConditons/TermsAndConditions";
 import SERP from "./Pages/SERP/SERP";
+import Login from "./Pages/Login/Login";
 
 const App = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/search" element={<SERP />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );

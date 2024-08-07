@@ -35,18 +35,18 @@ const Navbar = () => {
       }`}
     >
       <nav className="w-5/6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between h-16 items-center">
+        <div className="w-full">
+          <div className="flex w-full justify-between h-16 items-center">
             <div className="flex">
               <Link to={"/"} className="flex items-center">
                 <img
-                  className="h-16 w-auto"
+                  className="h-16 w-40"
                   src={theme === "dark" ? WhiteLogo : BlackLogo}
                   alt="Logo"
                 />
               </Link>
             </div>
-            <div className="hidden md:flex md:items-center md:space-x-10">
+            <div className="flex items-center gap-10">
               <Link
                 to="/about-us"
                 className="text-darkBlack dark:text-darkWhite hover:bg-gray-300 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1"
@@ -69,13 +69,14 @@ const Navbar = () => {
                 Pricing
               </Link>
             </div>
-            <div className="flex items-center gap-4">
-              <button className="flex items-center gap-1 text-darkBlack dark:text-white">
+            <div className="flex items-center gap-4 w-40 justify-center">
+              <Link
+                to="/login"
+                className="flex items-center gap-1 text-darkBlack dark:text-white"
+              >
                 <FaUserCircle />
-                <Link to="/login" className="">
-                  Login
-                </Link>
-              </button>
+                Login
+              </Link>
             </div>
           </div>
         </div>

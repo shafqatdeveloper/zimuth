@@ -182,7 +182,7 @@ const SERP = () => {
           </div>
         </div>
         {/* Summaries about Generic Corporation and Generic Corporation Sites */}
-        <div className="w-full flex items-start gap-1 pt-6">
+        <div className="w-full flex items-start gap-7 pt-6">
           <div className="w-3/4 pb-32">
             <Summary
               sectionsExpaned={sectionsExpaned}

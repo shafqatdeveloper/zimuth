@@ -26,34 +26,37 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
             Summaries about Generic Corporation
           </h1>
           {/* Right Side Information */}
-          <div
-            data-tooltip-id="generic-info"
-            data-tooltip-place="bottom"
-            className="flex items-center gap-2 text-xs"
-          >
-            <h1 className="font-semibold">Metrics</h1>
-            <div className="w-[2px] h-8 bg-gray-600"></div>
-            {/* Word Count */}
-            <div className="text-xs">
-              <h1 className="flex items-center gap-3">
-                <span className="font-medium">Word Count</span>
-                <span className="self-end pl-2.5">500</span>
-              </h1>
-              <h1 className="flex items-center gap-3">
-                <span className="font-medium">Flesch Kinkaid</span>
-                <span className="self-end">90/100</span>
-              </h1>
-            </div>
-            {/* Subjectivity */}
-            <div className="text-xs">
-              <h1 className="flex items-center gap-3">
-                <span className="font-medium">Subjectivity</span>
-                <span className="self-end pl-2.5">0.4/1</span>
-              </h1>
-              <h1 className="flex items-center gap-3">
-                <span className="font-medium">Polarity</span>
-                <span className="self-end pl-7">-0.9/[-1.1]</span>
-              </h1>
+          <div className="flex items-center gap-4">
+            <div
+              style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
+              data-tooltip-id="generic-info"
+              data-tooltip-place="bottom"
+              className="flex items-center gap-2"
+            >
+              <h1 className="font-semibold">Metrics</h1>
+              <div className="w-[1.1px] h-6 bg-gray-600"></div>
+              {/* Word Count */}
+              <div className="">
+                <h1 className="flex items-center gap-3">
+                  <span className="font-medium">Word Count</span>
+                  <span className="self-end pl-2.5">500</span>
+                </h1>
+                <h1 className="flex items-center gap-3">
+                  <span className="font-medium">Flesch Kinkaid</span>
+                  <span className="self-end pl-0.5">90/100</span>
+                </h1>
+              </div>
+              {/* Subjectivity */}
+              <div className="">
+                <h1 className="flex items-center gap-3">
+                  <span className="font-medium">Subjectivity</span>
+                  <span className="self-end pl-2.5">0.4/1</span>
+                </h1>
+                <h1 className="flex items-center gap-3">
+                  <span className="font-medium">Polarity</span>
+                  <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                </h1>
+              </div>
             </div>
             <div className="text-gray-500 cursor-pointer">
               {sectionsExpaned ? (
@@ -92,14 +95,14 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
           </div>
         </div>
         {!sectionsExpaned && (
-          <div className="pb-6 flex items-center gap-5">
+          <div className="pb-6 text-darkBlack dark:text-darkWhite flex items-center gap-5">
             <div className="flex flex-col items-center gap-0.5">
               <div className="bg-white p-1 border border-darkBlack rounded-lg text-red-500 w-max">
                 <FaGoogle />
               </div>
               <p
                 style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
-                className="text-darkBlack font-medium"
+                className="font-medium"
               >
                 Generic Corp...
               </p>
@@ -110,7 +113,7 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
               </div>
               <p
                 style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
-                className="text-darkBlack font-medium"
+                className="font-medium"
               >
                 Generic Corp...
               </p>
@@ -121,7 +124,7 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
               </div>
               <p
                 style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
-                className="text-darkBlack font-medium"
+                className="font-medium"
               >
                 Generic Corp...
               </p>
@@ -132,7 +135,7 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
               </div>
               <p
                 style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
-                className="text-darkBlack font-medium"
+                className=" font-medium"
               >
                 Generic Corp...
               </p>

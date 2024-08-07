@@ -1,6 +1,10 @@
 import React from "react";
 import { FaGoogle } from "react-icons/fa";
-import { IoMdInformationCircle } from "react-icons/io";
+import {
+  IoIosArrowDown,
+  IoIosArrowUp,
+  IoMdInformationCircle,
+} from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
@@ -49,34 +53,40 @@ const GenericCorporate = () => {
               </h6>
             </div>
             {/* Right Side Information */}
-            <div
-              data-tooltip-id="generic-info"
-              data-tooltip-place="bottom"
-              className="flex items-center gap-4 text-sm pr-10"
-            >
-              <h1 className="font-semibold">Metrics</h1>
-              <div className="w-[2px] h-8 bg-gray-600"></div>
-              {/* Word Count */}
-              <div className="text-xs">
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Word Count</span>
-                  <span className="self-end pl-2.5">500</span>
-                </h1>
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Flesch Kinkaid</span>
-                  <span className="self-end">90/100</span>
-                </h1>
+            <div className="flex items-center gap-4">
+              <div
+                style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
+                data-tooltip-id="generic-info"
+                data-tooltip-place="bottom"
+                className="flex items-center gap-2"
+              >
+                <h1 className="font-semibold">Metrics</h1>
+                <div className="w-[1.1px] h-6 bg-gray-600"></div>
+                {/* Word Count */}
+                <div className="">
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Word Count</span>
+                    <span className="self-end pl-2.5">500</span>
+                  </h1>
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Flesch Kinkaid</span>
+                    <span className="self-end pl-0.5">90/100</span>
+                  </h1>
+                </div>
+                {/* Subjectivity */}
+                <div className="">
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Subjectivity</span>
+                    <span className="self-end pl-2.5">0.4/1</span>
+                  </h1>
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Polarity</span>
+                    <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                  </h1>
+                </div>
               </div>
-              {/* Subjectivity */}
-              <div className="text-xs">
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Subjectivity</span>
-                  <span className="self-end pl-2.5">0.4/1</span>
-                </h1>
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Polarity</span>
-                  <span className="self-end pl-7">-0.9/[-1.1]</span>
-                </h1>
+              <div className="text-gray-500 opacity-0 cursor-pointer">
+                <IoIosArrowUp size={28} />
               </div>
             </div>
           </div>
@@ -138,34 +148,40 @@ const GenericCorporate = () => {
               </h6>
             </div>
             {/* Right Side Information */}
-            <div
-              data-tooltip-id="generic-info"
-              data-tooltip-place="bottom"
-              className="flex items-center gap-4 text-sm pr-10"
-            >
-              <h1 className="font-semibold">Metrics</h1>
-              <div className="w-[2px] h-8 bg-gray-600"></div>
-              {/* Word Count */}
-              <div className="text-xs">
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Word Count</span>
-                  <span className="self-end pl-2.5">500</span>
-                </h1>
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Flesch Kinkaid</span>
-                  <span className="self-end">90/100</span>
-                </h1>
+            <div className="flex items-center gap-4">
+              <div
+                style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
+                data-tooltip-id="generic-info"
+                data-tooltip-place="bottom"
+                className="flex items-center gap-2"
+              >
+                <h1 className="font-semibold">Metrics</h1>
+                <div className="w-[1.1px] h-6 bg-gray-600"></div>
+                {/* Word Count */}
+                <div className="">
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Word Count</span>
+                    <span className="self-end pl-2.5">500</span>
+                  </h1>
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Flesch Kinkaid</span>
+                    <span className="self-end pl-0.5">90/100</span>
+                  </h1>
+                </div>
+                {/* Subjectivity */}
+                <div className="">
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Subjectivity</span>
+                    <span className="self-end pl-2.5">0.4/1</span>
+                  </h1>
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Polarity</span>
+                    <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                  </h1>
+                </div>
               </div>
-              {/* Subjectivity */}
-              <div className="text-xs">
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Subjectivity</span>
-                  <span className="self-end pl-2.5">0.4/1</span>
-                </h1>
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Polarity</span>
-                  <span className="self-end pl-7">-0.9/[-1.1]</span>
-                </h1>
+              <div className="text-gray-500 opacity-0 cursor-pointer">
+                <IoIosArrowUp size={28} />
               </div>
             </div>
           </div>
@@ -227,34 +243,40 @@ const GenericCorporate = () => {
               </h6>
             </div>
             {/* Right Side Information */}
-            <div
-              data-tooltip-id="generic-info"
-              data-tooltip-place="bottom"
-              className="flex items-center gap-4 text-sm pr-10"
-            >
-              <h1 className="font-semibold">Metrics</h1>
-              <div className="w-[2px] h-8 bg-gray-600"></div>
-              {/* Word Count */}
-              <div className="text-xs">
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Word Count</span>
-                  <span className="self-end pl-2.5">500</span>
-                </h1>
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Flesch Kinkaid</span>
-                  <span className="self-end">90/100</span>
-                </h1>
+            <div className="flex items-center gap-4">
+              <div
+                style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
+                data-tooltip-id="generic-info"
+                data-tooltip-place="bottom"
+                className="flex items-center gap-2"
+              >
+                <h1 className="font-semibold">Metrics</h1>
+                <div className="w-[1.1px] h-6 bg-gray-600"></div>
+                {/* Word Count */}
+                <div className="">
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Word Count</span>
+                    <span className="self-end pl-2.5">500</span>
+                  </h1>
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Flesch Kinkaid</span>
+                    <span className="self-end pl-0.5">90/100</span>
+                  </h1>
+                </div>
+                {/* Subjectivity */}
+                <div className="">
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Subjectivity</span>
+                    <span className="self-end pl-2.5">0.4/1</span>
+                  </h1>
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Polarity</span>
+                    <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                  </h1>
+                </div>
               </div>
-              {/* Subjectivity */}
-              <div className="text-xs">
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Subjectivity</span>
-                  <span className="self-end pl-2.5">0.4/1</span>
-                </h1>
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Polarity</span>
-                  <span className="self-end pl-7">-0.9/[-1.1]</span>
-                </h1>
+              <div className="text-gray-500 opacity-0 cursor-pointer">
+                <IoIosArrowUp size={28} />
               </div>
             </div>
           </div>
@@ -316,34 +338,40 @@ const GenericCorporate = () => {
               </h6>
             </div>
             {/* Right Side Information */}
-            <div
-              data-tooltip-id="generic-info"
-              data-tooltip-place="bottom"
-              className="flex items-center gap-4 text-sm pr-10"
-            >
-              <h1 className="font-semibold">Metrics</h1>
-              <div className="w-[2px] h-8 bg-gray-600"></div>
-              {/* Word Count */}
-              <div className="text-xs">
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Word Count</span>
-                  <span className="self-end pl-2.5">500</span>
-                </h1>
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Flesch Kinkaid</span>
-                  <span className="self-end">90/100</span>
-                </h1>
+            <div className="flex items-center gap-4">
+              <div
+                style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
+                data-tooltip-id="generic-info"
+                data-tooltip-place="bottom"
+                className="flex items-center gap-2"
+              >
+                <h1 className="font-semibold">Metrics</h1>
+                <div className="w-[1.1px] h-6 bg-gray-600"></div>
+                {/* Word Count */}
+                <div className="">
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Word Count</span>
+                    <span className="self-end pl-2.5">500</span>
+                  </h1>
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Flesch Kinkaid</span>
+                    <span className="self-end pl-0.5">90/100</span>
+                  </h1>
+                </div>
+                {/* Subjectivity */}
+                <div className="">
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Subjectivity</span>
+                    <span className="self-end pl-2.5">0.4/1</span>
+                  </h1>
+                  <h1 className="flex items-center gap-3">
+                    <span className="font-medium">Polarity</span>
+                    <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                  </h1>
+                </div>
               </div>
-              {/* Subjectivity */}
-              <div className="text-xs">
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Subjectivity</span>
-                  <span className="self-end pl-2.5">0.4/1</span>
-                </h1>
-                <h1 className="flex items-center gap-3">
-                  <span className="font-medium">Polarity</span>
-                  <span className="self-end pl-7">-0.9/[-1.1]</span>
-                </h1>
+              <div className="text-gray-500 opacity-0 cursor-pointer">
+                <IoIosArrowUp size={28} />
               </div>
             </div>
           </div>
