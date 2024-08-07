@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
-  AiOutlineArrowLeft,
   AiOutlineArrowRight,
   AiOutlineArrowUp,
   AiOutlineClose,
 } from "react-icons/ai";
-import { FaExpand, FaExpandAlt } from "react-icons/fa";
+import { FaExpandAlt } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
 import Plot from "react-plotly.js";
-import Modal from "react-modal";
+import { ThemeContext } from "../Context/ThemeContext";
 
 // Function to generate random points
 const generateRandomPoints = (
@@ -60,10 +59,8 @@ const dummyData = [
 const ScatterPlot3D = () => {
   const [data, setData] = useState([]);
   const [expandSection, setExpandSection] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
-  const closeExpandSection = () => {
-    setExpandSection(false);
-  };
   useEffect(() => {
     // Transform the dummy JSON data into the format required by Plotly
     const plotData = dummyData.map((group) => ({
@@ -79,7 +76,7 @@ const ScatterPlot3D = () => {
   }, []);
 
   // Layout configuration for Plotly
-  const layout = {
+  const lightLayout = {
     scene: {
       xaxis: {
         title: { text: "Technicality", font: { size: 9 } },
@@ -114,40 +111,51 @@ const ScatterPlot3D = () => {
     plot_bgcolor: "rgba(0,0,0,0)",
   };
 
-  const Expanededlayout = {
+  // Dark mode layout
+  const darkLayout = {
+    ...lightLayout,
     scene: {
+      ...lightLayout.scene,
       xaxis: {
-        title: { text: "Technicality", font: { size: 9 } },
-        range: [3, 8],
+        ...lightLayout.scene.xaxis,
+        title: {
+          ...lightLayout.scene.xaxis.title,
+          font: { color: "white", size: 9 },
+        },
+        tickfont: { color: "white" },
+        gridcolor: "gray",
+        zerolinecolor: "gray",
       },
       yaxis: {
-        title: { text: "Engagement", font: { size: 9 } },
-        range: [1, 6],
+        ...lightLayout.scene.yaxis,
+        title: {
+          ...lightLayout.scene.yaxis.title,
+          font: { color: "white", size: 9 },
+        },
+        tickfont: { color: "white" },
+        gridcolor: "gray",
+        zerolinecolor: "gray",
       },
       zaxis: {
-        title: { text: "Recentness", font: { size: 9 } },
-        range: [1, 7],
-      },
-      camera: {
-        eye: { x: 3.2, y: -2, z: 1.8 },
-        center: { x: 0, y: 0, z: 0 },
-      },
-    },
-    autosize: true,
-    margin: { l: 0, r: 0, b: 0, t: 0 },
-    legend: {
-      x: 0,
-      y: 1,
-      orientation: "v",
-      xanchor: "left",
-      yanchor: "top",
-      font: {
-        size: 11,
+        ...lightLayout.scene.zaxis,
+        title: {
+          ...lightLayout.scene.zaxis.title,
+          font: { color: "white", size: 9 },
+        },
+        tickfont: { color: "white" },
+        gridcolor: "gray",
+        zerolinecolor: "gray",
       },
     },
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
+    legend: {
+      ...lightLayout.legend,
+      font: { color: "white", size: 11 },
+    },
   };
+
+  const layout = theme === "dark" ? darkLayout : lightLayout;
 
   return (
     <div
@@ -160,7 +168,7 @@ const ScatterPlot3D = () => {
       <div className="absolute top-2.5 right-2.5 z-10">
         <FaExpandAlt
           onClick={() => setExpandSection(true)}
-          className="text-gray-500 cursor-pointer"
+          className="text-gray-500 dark:text-darkWhite cursor-pointer"
         />
       </div>
       <Plot
@@ -175,7 +183,9 @@ const ScatterPlot3D = () => {
       />
       <div
         style={{ fontSize: "0.55rem", lineHeight: "0.6rem" }}
-        className="flex flex-col gap-0.5 font-medium absolute bottom-4 right-2"
+        className={`flex flex-col gap-0.5 font-medium absolute bottom-4 right-2 ${
+          theme === "dark" ? "text-white" : "text-black"
+        }`}
       >
         <span className="flex items-center gap-1">
           <AiOutlineArrowRight />
@@ -191,15 +201,19 @@ const ScatterPlot3D = () => {
         </span>
       </div>
       {expandSection && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center">
-          <div className="relative bg-white w-11/12 h-5/6 rounded-md shadow-md shadow-black/30 flex flex-col justify-center items-center p-6">
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50">
+          <div
+            className={`relative ${
+              theme === "dark" ? "bg-darkBlack" : "bg-darkWhite"
+            } w-11/12 h-5/6 rounded-md shadow-md shadow-black/30 flex flex-col justify-center items-center p-6`}
+          >
             <AiOutlineClose
               onClick={() => setExpandSection(false)}
-              className="cursor-pointer absolute top-4 right-4 text-gray-500 z-50"
+              className="cursor-pointer absolute top-4 right-4 text-darkBlack dark:text-darkWhite z-50"
             />
             <Plot
               data={data}
-              layout={Expanededlayout}
+              layout={layout}
               config={{ responsive: true, displayModeBar: false }}
               style={{
                 width: "100%",
@@ -207,7 +221,11 @@ const ScatterPlot3D = () => {
                 backgroundColor: "transparent",
               }}
             />
-            <div className="flex flex-col gap-0.5 absolute bottom-4 right-2">
+            <div
+              className={`flex flex-col gap-0.5 absolute bottom-4 right-2 ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
+            >
               <span className="flex items-center gap-1">
                 <AiOutlineArrowRight />
                 Technicality

@@ -28,7 +28,7 @@ const ImageSection = () => {
     { img: dummyImage },
   ];
   return (
-    <div className="w-full p-3 grid grid-cols-2 gap-x-2 gap-y-0 h-[230px] overflow-auto">
+    <div className="w-full p-3 grid grid-cols-2 gap-x-2 gap-y-0 h-[230px] overflow-auto ">
       {imagesData.map((singleImg, index) => {
         return (
           <div

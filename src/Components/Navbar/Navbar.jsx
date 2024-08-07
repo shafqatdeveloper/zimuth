@@ -40,7 +40,7 @@ const Navbar = () => {
             <div className="flex">
               <Link to={"/"} className="flex items-center">
                 <img
-                  className="h-16 w-40"
+                  className="h-16 w-auto"
                   src={theme === "dark" ? WhiteLogo : BlackLogo}
                   alt="Logo"
                 />

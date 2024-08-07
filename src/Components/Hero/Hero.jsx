@@ -28,9 +28,13 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full h-screen flex pt-24 justify-center ">
+    <div className="w-full h-screen flex pt-24 justify-center bg-transparent text-darkBlack dark:bg-darkBlack dark:text-white">
       <div className="flex w-full flex-col items-center">
-        <img src={blackLogo} alt="Zimuth" className="h-52 w-auto" />
+        <img
+          src={theme === "dark" ? whiteLogo : blackLogo}
+          alt="Zimuth"
+          className="h-52 w-auto"
+        />
         <div className="lg:w-3/5 flex items-center justify-center">
           <div
             onMouseEnter={() => setIsInputFocused(true)}
@@ -70,7 +74,7 @@ const Hero = () => {
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-darkBlack dark:placeholder-darkWhite bg-gray-200"
+                className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-black dark:placeholder-darkWhite bg-white"
                 placeholder="/ type something here"
               />
               <p className="text-xs text-darkBlack">

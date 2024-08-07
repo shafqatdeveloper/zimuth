@@ -31,7 +31,7 @@ const data = [
 
 const SentimentTypo = () => {
   return (
-    <Box className="w-full h-full overflow-y-auto overflow-x-hidden text-darkBlack">
+    <Box className="w-full h-full overflow-y-auto overflow-x-hidden">
       <Timeline position="alternate">
         {data.map((item, index) => (
           <TimelineItem key={index}>

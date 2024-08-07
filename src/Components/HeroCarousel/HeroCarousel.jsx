@@ -49,12 +49,12 @@ const Carousel = () => {
   ];
 
   return (
-    <div className="w-full relative mt-20">
-      <div className="pl-32 w-full">
+    <div className="w-full relative pt-20 flex items-center justify-end">
+      <div className="w-[90%]">
         <h2 className="text-start text-3xl font-semibold mb-12">
           AI Search, Re-imagined
         </h2>
-        <div className="absolute top-0 right-32 flex space-x-4 text-gray-500 ">
+        <div className="absolute top-20 mt-0.5 right-52 flex space-x-4 text-gray-500 ">
           <div className="swiper-button-prev cursor-pointer">
             <MdOutlineKeyboardArrowLeft size={45} className="pointer-expand" />
           </div>
@@ -79,7 +79,7 @@ const Carousel = () => {
                   <img
                     src={slide.slideImg}
                     alt={slide.slideHeading}
-                    className="w-full h-[28rem] object-cover"
+                    className="w-full h-[33rem] object-cover"
                   />
                   <div className="absolute inset-0 bg-white/20 p-6 flex flex-col justify-between">
                     <div>

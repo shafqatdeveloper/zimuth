@@ -4,9 +4,9 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import TooltipContent from "../TooltipContent/TooltipContent";
 import { FaGoogle } from "react-icons/fa";
 
-const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
+const SummaryTwo = ({ genericSectionExpaned, handleGenericSectionExpand }) => {
   const openCloseSections = () => {
-    handleSectionsExpand(!sectionsExpaned);
+    handleGenericSectionExpand(!genericSectionExpaned);
   };
   return (
     <div className="w-full pb-10 ">
@@ -20,7 +20,7 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
         <TooltipContent />
       </ReactTooltip>
       {/* First Section Summaries about Generic Corporation */}
-      <div className="w-full border-b border-b-black dark:border-b-darkWhite">
+      <div className="w-full border-b dark:border-b-darkWhite border-b-black">
         <div className="flex items-center justify-between">
           <h1 className="text-sm lg:text-base font-semibold">
             Summaries about Generic Corporation
@@ -59,7 +59,7 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
               </div>
             </div>
             <div className="text-gray-500 cursor-pointer">
-              {sectionsExpaned ? (
+              {genericSectionExpaned ? (
                 <IoIosArrowUp onClick={openCloseSections} size={28} />
               ) : (
                 <IoIosArrowDown onClick={openCloseSections} size={28} />
@@ -94,7 +94,7 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
             </ol>
           </div>
         </div>
-        {!sectionsExpaned && (
+        {!genericSectionExpaned && (
           <div className="pb-6 text-darkBlack dark:text-darkWhite flex items-center gap-5">
             <div className="flex flex-col items-center gap-0.5">
               <div className="bg-white p-1 border border-darkBlack rounded-lg text-red-500 w-max">
@@ -147,4 +147,4 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
   );
 };
 
-export default Summary;
+export default SummaryTwo;

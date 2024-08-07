@@ -13,7 +13,7 @@ const Home = () => {
   const [ref, inView] = useInView({ triggerOnce: false });
 
   return (
-    <div className="h-full w-full  text-darkBlack dark:text-white bg-darkWhite">
+    <div className="h-full w-full  text-darkBlack dark:text-white bg-gradient-to-b from-darkWhite to-[#251760]">
       <div className="pt-8">
         <Hero />
         <AnimatePresence>
@@ -31,7 +31,7 @@ const Home = () => {
           <div ref={ref} className="w-full">
             <HeroCarousel />
           </div>
-          <div className="dark:text-white">
+          <div className="text-white">
             <SectionOne />
             <SectionTwo />
             <SectionThree />

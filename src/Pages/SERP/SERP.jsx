@@ -28,6 +28,7 @@ const SERP = () => {
   const [showImagesSection, setShowImagesSection] = useState(true);
   const [show3DChartSection, setShow3DChartSection] = useState(true);
   const [showSentimentSection, setShowSentimentSection] = useState(true);
+  const [readMoreEnabled, setReadMoreEnabled] = useState(false);
   const [selectedImageSection, setSelectedImageSection] = useState("image");
   const [sentimentSectionSelected, setSentimentSectionSelected] =
     useState("typography");
@@ -52,7 +53,7 @@ const SERP = () => {
         {/* form */}
         <div className="w-2/5">
           <form className="w-full">
-            <div className="w-full border flex justify-between items-center px-2 border-darkBlack bg-white dark:bg-black dark:border-darkWhite rounded-md">
+            <div className="w-full border flex justify-between items-center px-2 border-darkBlack bg-white dark:bg-[#22262b] dark:border-darkWhite rounded-md">
               <input
                 type="text"
                 className="w-full p-2 outline-none focus:outline-none bg-transparent"
@@ -63,15 +64,15 @@ const SERP = () => {
           </form>
         </div>
         {/* Technical and Acedamic Section */}
-        <div className="mt-4 w-full relative pb-14 border-b border-b-darkBlack">
+        <div className="mt-4 w-full relative pb-14 border-b border-b-darkBlack dark:border-b-darkWhite">
           {/* Page Selector */}
           <div className="flex items-center gap-5 border-b border-b-cyan80 pb-[0.3px]">
             <button
               onClick={() => setSelectedPageType("Technical")}
               className={
                 selectedPageType === "Technical"
-                  ? "text-cyan80 border-b-2 border-b-cyan80 py-2 transition-all"
-                  : "py-2 border-b border-b-transparent transition-all"
+                  ? "text-cyan80 border-b-2 border-b-cyan80 py-2.5 transition-all"
+                  : "py-2.5 border-b border-b-transparent transition-all"
               }
             >
               Technical
@@ -80,15 +81,19 @@ const SERP = () => {
               onClick={() => setSelectedPageType("Acedamic")}
               className={
                 selectedPageType === "Acedamic"
-                  ? "text-cyan80 border-b-2 border-b-cyan80 py-2 transition-all"
-                  : "py-2 border-b border-b-transparent transition-all"
+                  ? "text-cyan80 border-b-2 border-b-cyan80 py-2.5 transition-all"
+                  : "py-2.5 border-b border-b-transparent transition-all"
               }
             >
               Acedamic
             </button>
           </div>
           {/* Page Content */}
-          <div className="w-full flex justify-between pt-6">
+          <div
+            className={`w-full flex ${
+              readMoreEnabled ? "h-[36rem]" : "h-72"
+            } justify-between pt-6 `}
+          >
             {/* Typography */}
             <div className="w-5/6">
               <h1 className="text-3xl font-semibold tracking-wide pb-8">
@@ -129,7 +134,7 @@ const SERP = () => {
               <div className="pr-4">
                 <button
                   onMouseEnter={handleMouseEnter}
-                  className="text-gray-500"
+                  className="text-gray-500 dark:text-gray-300"
                 >
                   <IoMdSettings size={23} />
                 </button>
@@ -176,8 +181,11 @@ const SERP = () => {
               </div>
             </div>
             {/* Read More */}
-            <button className="text-gray-500 text-sm font-medium absolute bottom-1 right-2">
-              Read More
+            <button
+              onClick={() => setReadMoreEnabled(!readMoreEnabled)}
+              className="text-gray-500 dark:text-gray-300 text-sm font-medium absolute bottom-1 right-2"
+            >
+              {readMoreEnabled ? "Read Less" : "Read More"}
             </button>
           </div>
         </div>
@@ -188,9 +196,13 @@ const SERP = () => {
               sectionsExpaned={sectionsExpaned}
               handleSectionsExpand={handleSectionsExpand}
             />
-            {sectionsExpaned && <GenericCorporate />}
+            {sectionsExpaned && (
+              <>
+                <GenericCorporate sectionsExpaned={sectionsExpaned} />
+              </>
+            )}
           </div>
-          <div className="w-1/4 bg-white rounded-lg border border-gray-400 shadow-md shadow-gray-300 mb-10">
+          <div className="w-1/4 bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-darkWhite rounded-lg border border-gray-400 shadow-md shadow-gray-300 dark:shadow-gray-600 mb-10">
             {/* Images Section */}
             <div
               className={
@@ -198,7 +210,7 @@ const SERP = () => {
               }
             >
               {/* Controls */}
-              <div className="flex items-center justify-between py-1 text-gray-600 border-b border-b-gray-600">
+              <div className="flex items-center justify-between py-1  border-b border-b-gray-600">
                 <div className="flex items-center gap-8 px-2">
                   <h1>Images</h1>
                   <div className="flex items-center gap-1">
@@ -206,7 +218,7 @@ const SERP = () => {
                       onClick={() => setSelectedImageSection("image")}
                       className={
                         selectedImageSection === "image"
-                          ? "bg-gray-200 p-1 rounded-sm"
+                          ? "bg-gray-200 dark:bg-black p-1 rounded-sm"
                           : "p-1"
                       }
                     >
@@ -217,7 +229,7 @@ const SERP = () => {
                       onClick={() => setSelectedImageSection("video")}
                       className={
                         selectedImageSection === "video"
-                          ? "bg-gray-200 p-1 rounded-sm"
+                          ? "bg-gray-200 dark:bg-black p-1 rounded-sm"
                           : "p-1"
                       }
                     >
@@ -247,7 +259,7 @@ const SERP = () => {
               }
             >
               {/* Controls */}
-              <div className="flex items-center justify-between py-1 text-gray-600 border-b border-b-gray-600">
+              <div className="flex items-center justify-between py-1 border-b border-b-gray-600">
                 <div className="flex items-center gap-8 px-2">
                   <h1>Sites Map</h1>
                   <div className="flex items-center gap-1">
@@ -255,7 +267,7 @@ const SERP = () => {
                       onClick={() => setSelected3DChartSection("3dChart")}
                       className={
                         selected3DChartSection === "3dChart"
-                          ? "bg-gray-200 p-1 rounded-sm"
+                          ? "bg-gray-200 dark:bg-black p-1 rounded-sm"
                           : "p-1"
                       }
                     >
@@ -266,7 +278,7 @@ const SERP = () => {
                       onClick={() => setSelected3DChartSection("tree")}
                       className={
                         selected3DChartSection === "tree"
-                          ? "bg-gray-200 p-1 rounded-sm"
+                          ? "bg-gray-200 dark:bg-black p-1 rounded-sm"
                           : "p-1"
                       }
                     >
@@ -296,7 +308,7 @@ const SERP = () => {
               }
             >
               {/* Controls */}
-              <div className="flex items-center justify-between py-1 text-gray-600 border-b border-b-gray-600">
+              <div className="flex items-center justify-between py-1 border-b border-t border-t-gray-600 border-b-gray-600">
                 <div className="flex items-center gap-8 px-2">
                   <h1>Sentiment</h1>
                   <div className="flex items-center gap-1">
@@ -304,18 +316,18 @@ const SERP = () => {
                       onClick={() => setSentimentSectionSelected("typography")}
                       className={
                         sentimentSectionSelected === "typography"
-                          ? "bg-gray-200 p-1 rounded-sm"
+                          ? "bg-gray-200 dark:bg-black p-1 rounded-sm"
                           : "p-1"
                       }
                     >
                       <PiChartScatterLight />
                     </button>
-                    <div className="bg-gray-600 w-[0.8px] h-6"></div>
+                    <div className="bg-gray-600  w-[0.8px] h-6"></div>
                     <button
                       onClick={() => setSentimentSectionSelected("chart")}
                       className={
                         sentimentSectionSelected === "chart"
-                          ? "bg-gray-200 p-1 rounded-sm"
+                          ? "bg-gray-200 p-1 dark:bg-black rounded-sm"
                           : "p-1"
                       }
                     >
