@@ -5,7 +5,7 @@ import { GrDocument } from "react-icons/gr";
 
 const Pricing = () => {
   return (
-    <div className="w-full h-full flex justify-center text-darkBlack bg-darkWhite dark:text-white dark:bg-darkBlack">
+    <div className="w-full min-h-screen flex justify-center text-darkBlack bg-darkWhite dark:text-white dark:bg-darkBlack">
       <div className="w-4/5 py-28">
         {/* Heading */}
         <div className="">

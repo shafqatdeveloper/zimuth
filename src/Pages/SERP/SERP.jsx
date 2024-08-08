@@ -17,6 +17,7 @@ import TreeChart from "../../Components/TeeChart/TreeChart";
 import ScatteredChart from "../../Components/Chart2D/ScatteredChart";
 import SentimentTypo from "../../Components/SentimentTypgraphy/SentimentTypo";
 import GenericCorporate from "../../Components/GenericCorporate/GenericCorporate";
+import GenericCorporateTwo from "../../Components/GenericCorporate/GenericCorporateTwo";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -48,7 +49,7 @@ const SERP = () => {
     setsectionsExpaned(newState);
   };
   return (
-    <div className="h-full w-full flex justify-center text-darkBlack bg-darkWhite dark:text-darkWhite dark:bg-darkBlack pt-24">
+    <div className="min-h-screen w-full flex justify-center text-darkBlack bg-darkWhite dark:text-darkWhite dark:bg-darkBlack pt-24">
       <div className="w-4/5 pt-5">
         {/* form */}
         <div className="w-2/5">
@@ -201,6 +202,7 @@ const SERP = () => {
                 <GenericCorporate sectionsExpaned={sectionsExpaned} />
               </>
             )}
+            <GenericCorporateTwo />
           </div>
           <div className="w-1/4 bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-darkWhite rounded-lg border border-gray-400 shadow-md shadow-gray-300 dark:shadow-gray-600 mb-10">
             {/* Images Section */}

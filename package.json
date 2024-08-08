@@ -15,11 +15,9 @@
     "@mui/lab": "^5.0.0-alpha.173",
     "@mui/material": "^5.16.6",
     "d3": "^7.9.0",
-    "d3-org-chart": "^3.1.1",
     "framer-motion": "^11.3.18",
     "plotly.js": "^2.34.0",
     "react": "^18.3.1",
-    "react-d3-tree": "^3.6.2",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-infinite-scroll-component": "^6.1.0",
@@ -31,8 +29,7 @@
     "react-tooltip": "^5.27.1",
     "recharts": "^2.12.7",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.1.8",
-    "treant-js": "^1.0.1"
+    "swiper": "^11.1.8"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

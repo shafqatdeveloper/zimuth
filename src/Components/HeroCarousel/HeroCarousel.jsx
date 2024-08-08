@@ -88,7 +88,10 @@ const Carousel = () => {
                         {slide.slideDesc}
                       </p>
                     </div>
-                    <Link to={slide.slideLink} className="self-end">
+                    <Link
+                      to={slide.slideLink}
+                      className="self-end hover:scale-125 transition-all duration-300"
+                    >
                       <CgArrowRight
                         size={34}
                         className="text-white pointer-expand"

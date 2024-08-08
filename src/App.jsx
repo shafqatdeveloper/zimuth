@@ -21,11 +21,7 @@ const App = () => {
       <Navbar />
       <button
         onClick={toggleTheme}
-        className={`flex items-center fixed z-20 left-3 bottom-3 justify-center ${
-          location.pathname === "/"
-            ? "text-darkWhite"
-            : "text-darkBlack dark:text-darkWhite"
-        } rounded-md`}
+        className={`flex items-center fixed z-20 left-3 bottom-3 justify-center text-darkBlack dark:text-darkWhite rounded-md`}
       >
         {theme === "dark" ? (
           <MdOutlineLightMode size={20} />
