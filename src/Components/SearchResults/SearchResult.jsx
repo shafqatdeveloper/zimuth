@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import {
-  IoIosArrowDown,
   IoIosArrowUp,
   IoMdInformationCircle,
 } from "react-icons/io";
@@ -9,10 +8,8 @@ import { Link } from "react-router-dom";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import TooltipContent from "../TooltipContent/TooltipContent";
-import SummaryTwo from "../SummariesSREP/SummaryTwo";
-import GenericCorporateTwo from "./GenericCorporateTwo";
 
-const GenericCorporate = ({ sectionsExpaned }) => {
+const SearchResult = ({ sectionsExpaned,searchResult }) => {
   const [secondGenericOptionExpand, setSecondGenericOptionExpand] =
     useState(false);
   return (
@@ -71,22 +68,22 @@ const GenericCorporate = ({ sectionsExpaned }) => {
                   <div className="">
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Word Count</span>
-                      <span className="self-end pl-2.5">500</span>
+                      <span className="self-end pl-2.5">{searchResult.wordCount}</span>
                     </h1>
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Flesch Kinkaid</span>
-                      <span className="self-end pl-0.5">90/100</span>
+                      <span className="self-end pl-0.5">{searchResult.fleschKinkaid}</span>
                     </h1>
                   </div>
                   {/* Subjectivity */}
                   <div className="">
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Subjectivity</span>
-                      <span className="self-end pl-2.5">0.4/1</span>
+                      <span className="self-end pl-2.5">{searchResult.subjectivity}</span>
                     </h1>
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Polarity</span>
-                      <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                      <span className="self-end pl-[22px]">{searchResult.polarity}</span>
                     </h1>
                   </div>
                 </div>
@@ -105,15 +102,11 @@ const GenericCorporate = ({ sectionsExpaned }) => {
                 Go to Generic
               </Link>
               <ol className="list-disc text-xs pl-3.5">
-                <li>
-                  Generic Corporation is focused on offering generic services
-                  with generic advantages
-                </li>
-                <li>
-                  Generic Corporation was founded by Generic Founder with the
-                  generic mission of doing generic thing
-                </li>
-                <li>Generic Text Line for Testing </li>
+                {
+                  searchResult.summary.map((point,index)=>(
+                    <li key={index}>{point}</li>
+                  ))
+                }
               </ol>
             </div>
             {/* Date */}
@@ -121,7 +114,7 @@ const GenericCorporate = ({ sectionsExpaned }) => {
               className="text-gray-500"
               style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
             >
-              September 11, 2001
+              {searchResult.date}
             </h1>
           </div>
           {/* 2nd Section */}
@@ -166,22 +159,22 @@ const GenericCorporate = ({ sectionsExpaned }) => {
                   <div className="">
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Word Count</span>
-                      <span className="self-end pl-2.5">500</span>
+                      <span className="self-end pl-2.5">{searchResult.wordCount}</span>
                     </h1>
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Flesch Kinkaid</span>
-                      <span className="self-end pl-0.5">90/100</span>
+                      <span className="self-end pl-0.5">{searchResult.fleschKinkaid}</span>
                     </h1>
                   </div>
                   {/* Subjectivity */}
                   <div className="">
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Subjectivity</span>
-                      <span className="self-end pl-2.5">0.4/1</span>
+                      <span className="self-end pl-2.5">{searchResult.subjectivity}</span>
                     </h1>
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Polarity</span>
-                      <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                      <span className="self-end pl-[22px]">{searchResult.polarity}</span>
                     </h1>
                   </div>
                 </div>
@@ -200,15 +193,11 @@ const GenericCorporate = ({ sectionsExpaned }) => {
                 Go to Generic
               </Link>
               <ol className="list-disc text-xs pl-3.5">
-                <li>
-                  Generic Corporation is focused on offering generic services
-                  with generic advantages
-                </li>
-                <li>
-                  Generic Corporation was founded by Generic Founder with the
-                  generic mission of doing generic thing
-                </li>
-                <li>Generic Text Line for Testing </li>
+                {
+                  searchResult.summary.map((point,index)=>(
+                    <li key={index}>{point}</li>
+                  ))
+                }
               </ol>
             </div>
             {/* Date */}
@@ -216,7 +205,7 @@ const GenericCorporate = ({ sectionsExpaned }) => {
               className="text-gray-500"
               style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
             >
-              September 11, 2001
+              {searchResult.date}
             </h1>
           </div>
           {/* 3rd Section */}
@@ -261,22 +250,22 @@ const GenericCorporate = ({ sectionsExpaned }) => {
                   <div className="">
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Word Count</span>
-                      <span className="self-end pl-2.5">500</span>
+                      <span className="self-end pl-2.5">{searchResult.wordCount}</span>
                     </h1>
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Flesch Kinkaid</span>
-                      <span className="self-end pl-0.5">90/100</span>
+                      <span className="self-end pl-0.5">{searchResult.fleschKinkaid}</span>
                     </h1>
                   </div>
                   {/* Subjectivity */}
                   <div className="">
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Subjectivity</span>
-                      <span className="self-end pl-2.5">0.4/1</span>
+                      <span className="self-end pl-2.5">{searchResult.subjectivity}</span>
                     </h1>
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Polarity</span>
-                      <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                      <span className="self-end pl-[22px]">{searchResult.polarity}</span>
                     </h1>
                   </div>
                 </div>
@@ -295,15 +284,11 @@ const GenericCorporate = ({ sectionsExpaned }) => {
                 Go to Generic
               </Link>
               <ol className="list-disc text-xs pl-3.5">
-                <li>
-                  Generic Corporation is focused on offering generic services
-                  with generic advantages
-                </li>
-                <li>
-                  Generic Corporation was founded by Generic Founder with the
-                  generic mission of doing generic thing
-                </li>
-                <li>Generic Text Line for Testing </li>
+                {
+                  searchResult.summary.map((point,index)=>(
+                    <li key={index}>{point}</li>
+                  ))
+                }
               </ol>
             </div>
             {/* Date */}
@@ -311,7 +296,7 @@ const GenericCorporate = ({ sectionsExpaned }) => {
               className="text-gray-500"
               style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
             >
-              September 11, 2001
+              {searchResult.date}
             </h1>
           </div>
           {/* 4th Section */}
@@ -356,22 +341,22 @@ const GenericCorporate = ({ sectionsExpaned }) => {
                   <div className="">
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Word Count</span>
-                      <span className="self-end pl-2.5">500</span>
+                      <span className="self-end pl-2.5">{searchResult.wordCount}</span>
                     </h1>
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Flesch Kinkaid</span>
-                      <span className="self-end pl-0.5">90/100</span>
+                      <span className="self-end pl-0.5">{searchResult.fleschKinkaid}</span>
                     </h1>
                   </div>
                   {/* Subjectivity */}
                   <div className="">
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Subjectivity</span>
-                      <span className="self-end pl-2.5">0.4/1</span>
+                      <span className="self-end pl-2.5">{searchResult.subjectivity}</span>
                     </h1>
                     <h1 className="flex items-center gap-3">
                       <span className="font-medium">Polarity</span>
-                      <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                      <span className="self-end pl-[22px]">{searchResult.polarity}</span>
                     </h1>
                   </div>
                 </div>
@@ -390,15 +375,11 @@ const GenericCorporate = ({ sectionsExpaned }) => {
                 Go to Generic
               </Link>
               <ol className="list-disc text-xs pl-3.5">
-                <li>
-                  Generic Corporation is focused on offering generic services
-                  with generic advantages
-                </li>
-                <li>
-                  Generic Corporation was founded by Generic Founder with the
-                  generic mission of doing generic thing
-                </li>
-                <li>Generic Text Line for Testing </li>
+                {
+                  searchResult.summary.map((point,index)=>(
+                    <li key={index}>{point}</li>
+                  ))
+                }
               </ol>
             </div>
             {/* Date */}
@@ -406,7 +387,7 @@ const GenericCorporate = ({ sectionsExpaned }) => {
               className="text-gray-500"
               style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
             >
-              September 11, 2001
+              {searchResult.date}
             </h1>
           </div>
         </div>
@@ -415,4 +396,4 @@ const GenericCorporate = ({ sectionsExpaned }) => {
   );
 };
 
-export default GenericCorporate;
+export default SearchResult;

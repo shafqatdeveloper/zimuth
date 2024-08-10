@@ -49,21 +49,21 @@ const Navbar = () => {
             <div className="flex items-center gap-10">
               <Link
                 to="/about-us"
-                className="text-darkBlack dark:text-darkWhite hover:bg-gray-300 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1"
+                className="text-darkBlack dark:text-darkWhite hover:bg-gray-200 p-2 dark:hover:bg-gray-800 rounded-xl flex items-center gap-1 transition-all duration-300"
               >
                 <IoIosInformationCircle />
                 About Us
               </Link>
               <Link
                 to="/news"
-                className="text-darkBlack dark:text-darkWhite hover:bg-gray-300 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1"
+                className="text-darkBlack dark:text-darkWhite hover:bg-gray-200 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1 transition-all duration-300"
               >
                 <FaRegNewspaper />
                 News
               </Link>
               <Link
                 to="/pricing"
-                className="text-darkBlack dark:text-darkWhite hover:bg-gray-300 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1"
+                className="text-darkBlack dark:text-darkWhite hover:bg-gray-200 p-2 dark:hover:bg-gray-700 rounded-xl flex items-center gap-1 transition-all duration-300"
               >
                 <IoPricetags />
                 Pricing

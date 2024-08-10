@@ -4,7 +4,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import TooltipContent from "../TooltipContent/TooltipContent";
 import { FaGoogle } from "react-icons/fa";
 
-const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
+const Summary = ({ sectionsExpaned, handleSectionsExpand,genericSummary }) => {
   const openCloseSections = () => {
     handleSectionsExpand(!sectionsExpaned);
   };
@@ -39,22 +39,22 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
               <div className="">
                 <h1 className="flex items-center gap-3">
                   <span className="font-medium">Word Count</span>
-                  <span className="self-end pl-2.5">500</span>
+                  <span className="self-end pl-2.5">{genericSummary.wordCount}</span>
                 </h1>
                 <h1 className="flex items-center gap-3">
                   <span className="font-medium">Flesch Kinkaid</span>
-                  <span className="self-end pl-0.5">90/100</span>
+                  <span className="self-end pl-0.5">{genericSummary.fleschKinkaid}</span>
                 </h1>
               </div>
               {/* Subjectivity */}
               <div className="">
                 <h1 className="flex items-center gap-3">
                   <span className="font-medium">Subjectivity</span>
-                  <span className="self-end pl-2.5">0.4/1</span>
+                  <span className="self-end pl-2.5">{genericSummary.subjectivity}</span>
                 </h1>
                 <h1 className="flex items-center gap-3">
                   <span className="font-medium">Polarity</span>
-                  <span className="self-end pl-[22px]">-0.9/[-1.1]</span>
+                  <span className="self-end pl-[22px]">{genericSummary.polarity}</span>
                 </h1>
               </div>
             </div>
@@ -73,24 +73,21 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand }) => {
             <h1 className="font-semibold">Info</h1>
             <ol className="list-disc">
               <li>
-                Webpages summarizing the operations, mission, history and
-                products of Generic Corporation
+                {genericSummary.info}
               </li>
             </ol>
           </div>
           <div className="flex items-start gap-14 text-sm">
             <h1 className="font-semibold">Summary</h1>
             <ol className="list-disc">
+              {
+                genericSummary.summary.map((point,index)=>(
+
               <li>
-                Founded in 2001 by generic founder, generic corporation is a
-                generic country industry company
+                {point}
               </li>
-              <li>
-                Generic Corporation was founded by Generic Founder with the
-                generic mission of doing generic thing
-              </li>
-              <li>Generic text line for testing with additional length</li>
-              <li>Generic testing text line</li>
+                ))
+              }
             </ol>
           </div>
         </div>

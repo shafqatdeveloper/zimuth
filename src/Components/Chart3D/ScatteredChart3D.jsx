@@ -9,61 +9,17 @@ import { GoArrowUpRight } from "react-icons/go";
 import Plot from "react-plotly.js";
 import { ThemeContext } from "../Context/ThemeContext";
 
-// Function to generate random points
-const generateRandomPoints = (
-  groupSize,
-  minX,
-  maxX,
-  minY,
-  maxY,
-  minZ,
-  maxZ
-) => {
-  return Array.from({ length: groupSize }, () => ({
-    x: Math.random() * (maxX - minX) + minX,
-    y: Math.random() * (maxY - minY) + minY,
-    z: Math.random() * (maxZ - minZ) + minZ,
-  }));
-};
 
-// Dummy JSON data
-const dummyData = [
-  {
-    group: "Group 1",
-    color: "red",
-    points: generateRandomPoints(9, 3, 8, 1, 6, 1, 7),
-  },
-  {
-    group: "Group 2",
-    color: "orange",
-    points: generateRandomPoints(9, 3, 8, 1, 6, 1, 7),
-  },
-  {
-    group: "Group 3",
-    color: "yellow",
-    points: generateRandomPoints(9, 3, 8, 1, 6, 1, 7),
-  },
-  {
-    group: "Group 4",
-    color: "cyan",
-    points: generateRandomPoints(9, 3, 8, 1, 6, 1, 7),
-  },
-  {
-    group: "Group 5",
-    color: "blue",
-    points: generateRandomPoints(9, 3, 8, 1, 6, 1, 7),
-  },
-];
 
 // Component to render a 3D scatter plot
-const ScatterPlot3D = () => {
+const ScatterPlot3D = ({chartData}) => {
   const [data, setData] = useState([]);
   const [expandSection, setExpandSection] = useState(false);
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     // Transform the dummy JSON data into the format required by Plotly
-    const plotData = dummyData.map((group) => ({
+    const plotData = chartData.map((group) => ({
       type: "scatter3d",
       mode: "markers",
       x: group.points.map((p) => p.x),

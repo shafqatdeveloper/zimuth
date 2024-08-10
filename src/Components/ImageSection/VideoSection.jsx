@@ -3,33 +3,10 @@ import dummyImage from "../../assets/about-carousel-img-1.jpg";
 import { FaGoogle } from "react-icons/fa";
 import "./ImageSection.css";
 
-const VideoSection = () => {
-  const imagesData = [
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-  ];
+const VideoSection = ({videos}) => {
   return (
     <div className="w-full p-2 grid grid-cols-2 gap-x-2 gap-y-1 h-52 overflow-auto">
-      {imagesData.map((singleImg, index) => {
+      {videos.map((singleVideo, index) => {
         return (
           <div
             key={index}
@@ -39,7 +16,7 @@ const VideoSection = () => {
             <iframe
               width="100%"
               height="80px"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with your dummy video URL
+              src={singleVideo.video}
               title="Dummy YouTube Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -48,9 +25,9 @@ const VideoSection = () => {
             ></iframe>
             <span className="flex items-center gap-1.5">
               <FaGoogle />
-              Youtube - Dave
+              {singleVideo.source}
             </span>
-            <p>Stock Video Title</p>
+            <p>{singleVideo.title}</p>
           </div>
         );
       })}

@@ -10,30 +10,11 @@ import {
 } from "@mui/lab";
 import { Typography, Box } from "@mui/material";
 
-const data = [
-  {
-    date: "22/05/2024",
-    text: "Generic Corp is dissolved by Generic Moron for generic reasons",
-  },
-  {
-    date: "22/05/2024",
-    text: "Generic Corp is dissolved by Generic Moron for generic reasons",
-  },
-  {
-    date: "22/05/2024",
-    text: "Generic Corp is dissolved by Generic Moron for generic reasons",
-  },
-  {
-    date: "22/05/2024",
-    text: "Generic Corp is dissolved by Generic Moron for generic reasons",
-  },
-];
-
-const SentimentTypo = () => {
+const SentimentTypo = ({timeLine}) => {
   return (
     <Box className="w-full h-full overflow-y-auto overflow-x-hidden">
       <Timeline position="alternate">
-        {data.map((item, index) => (
+        {timeLine.map((item, index) => (
           <TimelineItem key={index}>
             {index % 2 === 0 ? (
               <TimelineOppositeContent>
@@ -58,7 +39,7 @@ const SentimentTypo = () => {
             )}
             <TimelineSeparator>
               <TimelineDot />
-              {index < data.length - 1 && <TimelineConnector />}
+              {index < timeLine.length - 1 && <TimelineConnector />}
             </TimelineSeparator>
             {index % 2 === 0 ? (
               <TimelineContent />

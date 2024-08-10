@@ -64,7 +64,7 @@ const Carousel = () => {
         </div>
         <div className="relative">
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation]}ƒ
             spaceBetween={17}
             slidesPerView={3.5}
             direction="horizontal"
@@ -74,7 +74,7 @@ const Carousel = () => {
             }}
           >
             {carouselSlides.map((slide, index) => (
-              <SwiperSlide key={index} className="py-4 px-2">
+              <SwiperSlide key={index} className="py-4">
                 <div className="relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-[1.025] hover:z-10">
                   <img
                     src={slide.slideImg}

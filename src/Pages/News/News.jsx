@@ -65,10 +65,6 @@ const News = () => {
       if (newsItems.length >= 20) {
         setHasMore(false);
       }
-
-      if (newsContainerRef.current) {
-        newsContainerRef.current.scrollIntoView({ behavior: "smooth" });
-      }
     }, 1500);
   };
 

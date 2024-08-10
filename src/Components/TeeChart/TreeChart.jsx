@@ -5,44 +5,8 @@ import { FaExpandAlt } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { ThemeContext } from "../Context/ThemeContext";
 
-const data = {
-  name: "Outdoor Spring Activities",
-  children: [
-    {
-      name: "Gardening",
-      children: [
-        { name: "Planting flowers" },
-        { name: "Starting a vegetable garden" },
-        { name: "Preparing garden beds" },
-      ],
-    },
-    {
-      name: "Outdoor Sports",
-      children: [
-        { name: "Cycling" },
-        { name: "Hiking" },
-        {
-          name: "Running",
-          children: [
-            { name: "Planting flowers" },
-            { name: "Starting a vegetable garden" },
-            { name: "Preparing garden beds" },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Picnicking",
-      children: [{ name: "Location ideas" }, { name: "Picnic essentials" }],
-    },
-    {
-      name: "Birdwatching",
-      children: [{ name: "Equipment" }, { name: "Popular bird species" }],
-    },
-  ],
-};
 
-const D3Tree = () => {
+const D3Tree = ({treeData}) => {
   const d3Container = useRef(null);
   const d3ModalContainer = useRef(null);
   const [expandSection, setExpandSection] = useState(false);
@@ -59,7 +23,7 @@ const D3Tree = () => {
     const width = containerWidth;
     const height = containerHeight;
 
-    const root = hierarchy(data);
+    const root = hierarchy(treeData);
 
     // Adjust the size of the tree layout and the vertical spacing between nodes
     const treeLayout = tree().size([height, width - 160]);

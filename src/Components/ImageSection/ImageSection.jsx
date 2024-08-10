@@ -3,33 +3,10 @@ import dummyImage from "../../assets/about-carousel-img-1.jpg";
 import { FaGoogle } from "react-icons/fa";
 import "./ImageSection.css";
 
-const ImageSection = () => {
-  const imagesData = [
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-    { img: dummyImage },
-  ];
+const ImageSection = ({images}) => {
   return (
     <div className="w-full p-3 grid grid-cols-2 gap-x-2 gap-y-0 h-[230px] overflow-auto ">
-      {imagesData.map((singleImg, index) => {
+      {images.map((singleImg, index) => {
         return (
           <div
             key={index}
@@ -41,7 +18,7 @@ const ImageSection = () => {
               <FaGoogle />
               Google
             </span>
-            <p>Stock image of some BS</p>
+            <p>{singleImg.description}</p>
           </div>
         );
       })}
