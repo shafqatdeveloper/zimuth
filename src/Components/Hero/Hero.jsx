@@ -8,9 +8,9 @@ import { HiCube } from "react-icons/hi2";
 import { useInView } from "react-intersection-observer";
 
 const trendingTopics = [
-  "trending topic 1",
-  "trending topic 2",
-  "trending topic 3",
+  "trending",
+  "trending",
+  "trending",
 ];
 
 const Hero = () => {
@@ -35,11 +35,11 @@ const Hero = () => {
           alt="Zimuth"
           className="h-52 w-auto"
         />
-        <div className="lg:w-3/5 flex items-center justify-center">
+        <div className="w-full sm:w-3/5 flex items-center justify-center">
           <div
             onMouseEnter={() => setIsInputFocused(true)}
             onMouseLeave={() => setIsInputFocused(false)}
-            className="w-4/5 flex items-center justify-center flex-col"
+            className="w-full md:w-4/5 flex items-center justify-center flex-col px-10 sm:px-0"
           >
             <div className="flex w-full items-center gap-2">
               {trendingTopics.map((topic, index) => {
@@ -53,7 +53,7 @@ const Hero = () => {
                     className="cursor-pointer"
                   >
                     <motion.div
-                      className="py-1 px-2 rounded-3xl capitalize bg-gradient-to-br from-[#99f1ee] via-[#dffffe] dark:via-[#015452] dark:text-darkWhite to-[#edecec] dark:to-[#1e1e1e] text-darkBlack"
+                      className="py-1 px-2 text-xs sm:text-base rounded-3xl capitalize bg-gradient-to-br from-[#99f1ee] via-[#dffffe] dark:via-[#015452] dark:text-darkWhite to-[#edecec] dark:to-[#1e1e1e] text-darkBlack"
                       initial={{ opacity: 0 }}
                       animate={
                         isInputFocused ? { x: 0, opacity: 1 } : { opacity: 0 }
@@ -77,7 +77,7 @@ const Hero = () => {
                 className="w-full p-3 rounded-full outline-none focus:outline-none dark:bg-[#22262b] dark:placeholder-darkWhite bg-gray-200"
                 placeholder="/ type something here"
               />
-              <p className="text-xs text-darkBlack">
+              <p className="text-xs">
                 Zimuth may make mistakes. Check important info.
               </p>
             </div>

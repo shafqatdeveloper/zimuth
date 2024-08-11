@@ -50,11 +50,11 @@ const Carousel = () => {
 
   return (
     <div className="w-full relative pt-20 flex items-center justify-end">
-      <div className="w-[90%]">
-        <h2 className="text-start text-3xl font-semibold mb-12">
+      <div className="w-full md:w-[90%]">
+        <h2 className="text-start pl-5 md:pl-0 text-xl sm:text-2xl md:text-3xl font-semibold mb-12">
           AI Search, Re-imagined
         </h2>
-        <div className="absolute top-20 mt-0.5 right-52 flex space-x-4 text-gray-500 ">
+        <div className="absolute top-[4.5rem] mt-0.5 right-6 md:right-52 flex sm:space-x-4 text-gray-500 ">
           <div className="swiper-button-prev cursor-pointer">
             <MdOutlineKeyboardArrowLeft size={45} className="pointer-expand" />
           </div>
@@ -62,15 +62,31 @@ const Carousel = () => {
             <MdOutlineKeyboardArrowRight size={45} className="pointer-expand" />
           </div>
         </div>
-        <div className="relative">
+        <div className="relative px-2.5 md:px-0">
           <Swiper
-            modules={[Navigation]}ƒ
+            modules={[Navigation]} ƒ
             spaceBetween={17}
             slidesPerView={3.5}
             direction="horizontal"
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
+            }}
+            breakpoints={{
+              // When window width is >= 0px
+              0: {
+                slidesPerView: 1,
+              },
+              640: {
+                slidesPerView: 1.5
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              // When window width is >= 1024px
+              1024: {
+                slidesPerView: 3.5,
+              },
             }}
           >
             {carouselSlides.map((slide, index) => (

@@ -31,7 +31,7 @@ const Home = () => {
           <div ref={ref} className="w-full">
             <HeroCarousel />
           </div>
-          <div>
+          <div className="flex flex-col gap-24 lg:gap-40">
             <SectionOne />
             <SectionTwo />
             <SectionThree />
