@@ -123,22 +123,44 @@ const News = () => {
             >
               <div className="flex flex-col pt-10 gap-7">
                 {newsItems.map((item, index) => (
-                  <div>
-                    <h1 className="font-bold pl-44 tracking-wide">
-                      {item.headline}
-                    </h1>
-                    <div className="flex gap-8 xl:gap-12 pt-6" key={index}>
-                      <h6 className="text-xs min-w-24">{item.date}</h6>
-                      <div className="flex flex-col gap-5">
-                        <img
-                          src={item.img}
-                          alt="News Image"
-                          className="w-32 h-32"
-                        />
+                  <>
+                    <div className="hidden md:!block">
+                      <h1 className="font-bold pl-32 lg:pl-40 xl:pl-44 tracking-wide">
+                        {item.headline}
+                      </h1>
+                      <div className="flex gap-8 xl:gap-12 pt-6" key={index}>
+                        <h6 className="text-xs min-w-24">{item.date}</h6>
+                        <div className="flex flex-col gap-5">
+                          <img
+                            src={item.img}
+                            alt="News Image"
+                            className="w-32 h-32"
+                          />
+                        </div>
+                        <p className="self-start">{item.description}</p>
                       </div>
-                      <p className="self-start">{item.description}</p>
                     </div>
-                  </div>
+                    <div>
+                      <div className="md:hidden">
+                        <h1 className="font-bold pl-3 sm:pl-6 tracking-wide">
+                          {item.headline}
+                        </h1>
+                        <div className="flex gap-8 xl:gap-12 items-center md:items-start pt-6" key={index}>
+                          <div>
+                            <h6 className="text-xs min-w-24 text-center pb-2">{item.date}</h6>
+                            <div className="flex flex-col gap-5">
+                              <img
+                                src={item.img}
+                                alt="News Image"
+                                className="w-52 md:w-32 h-32"
+                              />
+                            </div>
+                          </div>
+                          <p className="md:self-start text-sm md:text-base text-pretty">{item.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </>
                 ))}
               </div>
             </InfiniteScroll>

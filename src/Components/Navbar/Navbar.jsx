@@ -88,12 +88,12 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div className={mobileMenu ? "absolute top-16 left-0 dark:bg-black/60 bg-black/10 backdrop-blur-3xl h-[60vh] w-full transition-all duration-300" : "absolute top-16 left-[-100%] bg-black/30 backdrop-blur-3xl h-[60vh] transition-all duration-300 w-full"}>
+      <div className={mobileMenu ? "absolute top-16 left-0 bg-black/60 backdrop-blur-3xl h-[60vh] w-full transition-all duration-300" : "absolute top-16 left-[-100%] bg-black/60 backdrop-blur-3xl h-[60vh] transition-all duration-300 w-full"}>
         <div className="w-full flex flex-col" >
           <Link
             to="/about-us"
             onClick={() => setMobileMenu(false)}
-            className={`text-darkBlack dark:text-darkWhite p-2 ${locaton.pathname === "/about-us" && "bg-cyan80"} p-4 flex items-center gap-1 transition-all duration-300`}
+            className={`p-2 ${locaton.pathname === "/about-us" ? "bg-cyan80 text-darkBlack" : "text-darkWhite"} p-4 flex items-center gap-1 transition-all duration-300`}
           >
             <IoIosInformationCircle />
             About Us
@@ -101,7 +101,7 @@ const Navbar = () => {
           <Link
             to="/news"
             onClick={() => setMobileMenu(false)}
-            className={`text-darkBlack dark:text-darkWhite p-2 ${locaton.pathname === "/news" && "bg-cyan80"} p-4 flex items-center gap-1 transition-all duration-300`}
+            className={`p-2 ${locaton.pathname === "/news" ? "bg-cyan80 text-darkBlack" : "text-darkWhite"} p-4 flex items-center gap-1 transition-all duration-300`}
           >
             <FaRegNewspaper />
             News
@@ -109,7 +109,7 @@ const Navbar = () => {
           <Link
             to="/pricing"
             onClick={() => setMobileMenu(false)}
-            className={`text-darkBlack dark:text-darkWhite p-2 ${locaton.pathname === "/pricing" && "bg-cyan80"} p-4 flex items-center gap-1 transition-all duration-300`}
+            className={`p-2 ${locaton.pathname === "/pricing" ? "bg-cyan80 text-darkBlack" : "text-darkWhite"} p-4 flex items-center gap-1 transition-all duration-300`}
           >
             <IoPricetags />
             Pricing
@@ -117,7 +117,7 @@ const Navbar = () => {
           <Link
             to="/login"
             onClick={() => setMobileMenu(false)}
-            className={`text-darkBlack dark:text-darkWhite p-2 ${locaton.pathname === "/login" && "bg-cyan80"} p-4 flex items-center gap-1 transition-all duration-300`}
+            className={`p-2 ${locaton.pathname === "/login" ? "bg-cyan80 text-darkBlack" : "text-darkWhite"} p-4 flex items-center gap-1 transition-all duration-300`}
           >
             <FaUserCircle />
             Login

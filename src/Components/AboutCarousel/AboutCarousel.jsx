@@ -71,10 +71,10 @@ const AboutCarousel = () => {
                 className="w-full rounded-3xl h-full object-cover"
               />
               <div className="absolute top-0 left-0 w-full h-full flex gap-6 flex-col rounded-3xl justify-center items-center bg-black/40 bg-opacity-50">
-                <h1 className="text-white text-5xl font-semibold">
+                <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-semibold px-2 md:px-0 text-center md:text-start">
                   {slide.heading}
                 </h1>
-                <p className="text-white w-2/4 pt-3 text-center text-xl">
+                <p className="text-white w-full px-2 md:px-0 md:w-2/4 pt-3 text-center sm:text-xl">
                   {slide.description}
                 </p>
                 <button className="mt-4 px-4 py-2 text-xl bg-white text-black rounded-full">
@@ -85,8 +85,8 @@ const AboutCarousel = () => {
           );
         })}
       </Swiper>
-      <div className="w-2/4">
-        <h1 className="text-4xl font-semibold text-center text-darkBlack dark:text-darkWhite pt-28">
+      <div className="w-full md:w-2/4 mb-20">
+        <h1 className="text-2xl px-2 md:px-0 md:text-4xl font-semibold text-center text-darkBlack dark:text-darkWhite pt-28">
           Visualize changes in sentiment. Map information across time.
         </h1>
       </div>
