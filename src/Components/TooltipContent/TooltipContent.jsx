@@ -3,8 +3,8 @@ import React from "react";
 const TooltipContent = () => {
   return (
     <div
-      style={{ fontSize: "0.5rem", lineHeight: "0.64rem" }}
-      className="w-full text-darkBlack h-full flex flex-col gap-3"
+      style={{ fontSize: "0.5rem", lineHeight: "0.6rem" }}
+      className="text-darkBlack flex flex-col gap-2"
     >
       <p>
         <strong>Word Count</strong> is the total number of words in the body

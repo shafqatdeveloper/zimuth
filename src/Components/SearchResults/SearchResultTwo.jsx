@@ -22,7 +22,7 @@ const GenericCorporateTwo = ({ searchResult, genericSummary }) => {
               Summaries about Generic Corporation
             </h1>
             {/* Right Side Information */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-between gap-4">
               <div
                 style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
                 data-tooltip-id="generic-info"
@@ -150,7 +150,7 @@ const GenericCorporateTwo = ({ searchResult, genericSummary }) => {
         <div className="border-b border-b-black py-10 dark:border-b-darkWhite">
           <h1 className="text-xl font-semibold">Generic Corporation Sites</h1>
           <ReactTooltip
-            className="!w-[380px] !h-[140px] !bg-white border !border-darkBlack !rounded-md"
+            className="!w-[350px] !h-[155px] !bg-white border !border-darkBlack !rounded-md"
             place="right"
             effect="solid"
             id="generic-info"

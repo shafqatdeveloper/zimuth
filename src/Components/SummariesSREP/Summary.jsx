@@ -11,7 +11,7 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand, genericSummary }) => {
   return (
     <div className="w-full pb-10 ">
       <ReactTooltip
-        className="!w-[380px] !h-[140px] !bg-white border !border-darkBlack !rounded-md"
+        className="!w-[350px] !h-[155px] !bg-white border !border-darkBlack !rounded-md"
         place="right"
         effect="solid"
         id="generic-info"

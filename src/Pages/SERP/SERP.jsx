@@ -411,7 +411,7 @@ const SERP = () => {
             )}
             <SearchResultTwo genericSummary={result.genericSummary} searchResult={result.searchResult} />
           </div>
-          <div className="w-full lg:w-1/4 bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-darkWhite rounded-lg border border-gray-400 shadow-md shadow-gray-300 dark:shadow-gray-600 mb-10">
+          <div className="w-full lg:w-1/4 bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-darkWhite rounded-lg border border-gray-400 shadow-md shadow-gray-300 dark:shadow-gray-600 mb-28">
             {/* Images Section */}
             <div
               className={

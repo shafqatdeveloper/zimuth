@@ -17,7 +17,7 @@ const SearchResult = ({ sectionsExpaned, searchResult }) => {
       <div className="border-b border-b-black pb-10 dark:border-b-darkWhite">
         <h1 className="text-xl font-semibold">Generic Corporation Sites</h1>
         <ReactTooltip
-          className="!w-[380px] !h-[140px] !bg-white border !border-darkBlack !rounded-md"
+          className="!w-[350px] !h-[155px] !bg-white border !border-darkBlack !rounded-md"
           place="right"
           effect="solid"
           id="generic-info"
@@ -28,7 +28,7 @@ const SearchResult = ({ sectionsExpaned, searchResult }) => {
         <div className="pt-8 flex flex-col gap-10">
           {/* 1st Section */}
           <div className="flex flex-col gap-8">
-            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 lg:items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-red-500 border border-gray-400 rounded-full p-1 w-max">
@@ -117,9 +117,9 @@ const SearchResult = ({ sectionsExpaned, searchResult }) => {
               {searchResult.date}
             </h1>
           </div>
-          {/* 2nd Section */}
+          {/* 1st Section */}
           <div className="flex flex-col gap-8">
-            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 lg:items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-red-500 border border-gray-400 rounded-full p-1 w-max">
@@ -208,9 +208,9 @@ const SearchResult = ({ sectionsExpaned, searchResult }) => {
               {searchResult.date}
             </h1>
           </div>
-          {/* 3rd Section */}
+          {/* 1st Section */}
           <div className="flex flex-col gap-8">
-            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 lg:items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-red-500 border border-gray-400 rounded-full p-1 w-max">
@@ -299,9 +299,9 @@ const SearchResult = ({ sectionsExpaned, searchResult }) => {
               {searchResult.date}
             </h1>
           </div>
-          {/* 4th Section */}
+          {/* 1st Section */}
           <div className="flex flex-col gap-8">
-            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 lg:items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-red-500 border border-gray-400 rounded-full p-1 w-max">
@@ -390,7 +390,6 @@ const SearchResult = ({ sectionsExpaned, searchResult }) => {
               {searchResult.date}
             </h1>
           </div>
-
         </div>
       </div>
     </div>
