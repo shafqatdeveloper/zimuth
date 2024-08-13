@@ -9,7 +9,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import TooltipContent from "../TooltipContent/TooltipContent";
 
-const SearchResult = ({ sectionsExpaned,searchResult }) => {
+const SearchResult = ({ sectionsExpaned, searchResult }) => {
   const [secondGenericOptionExpand, setSecondGenericOptionExpand] =
     useState(false);
   return (
@@ -28,7 +28,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
         <div className="pt-8 flex flex-col gap-10">
           {/* 1st Section */}
           <div className="flex flex-col gap-8">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-red-500 border border-gray-400 rounded-full p-1 w-max">
@@ -103,7 +103,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
               </Link>
               <ol className="list-disc text-xs pl-3.5">
                 {
-                  searchResult.summary.map((point,index)=>(
+                  searchResult.summary.map((point, index) => (
                     <li key={index}>{point}</li>
                   ))
                 }
@@ -119,7 +119,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
           </div>
           {/* 2nd Section */}
           <div className="flex flex-col gap-8">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-red-500 border border-gray-400 rounded-full p-1 w-max">
@@ -194,7 +194,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
               </Link>
               <ol className="list-disc text-xs pl-3.5">
                 {
-                  searchResult.summary.map((point,index)=>(
+                  searchResult.summary.map((point, index) => (
                     <li key={index}>{point}</li>
                   ))
                 }
@@ -210,7 +210,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
           </div>
           {/* 3rd Section */}
           <div className="flex flex-col gap-8">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-red-500 border border-gray-400 rounded-full p-1 w-max">
@@ -285,7 +285,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
               </Link>
               <ol className="list-disc text-xs pl-3.5">
                 {
-                  searchResult.summary.map((point,index)=>(
+                  searchResult.summary.map((point, index) => (
                     <li key={index}>{point}</li>
                   ))
                 }
@@ -301,7 +301,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
           </div>
           {/* 4th Section */}
           <div className="flex flex-col gap-8">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <div className="text-red-500 border border-gray-400 rounded-full p-1 w-max">
@@ -376,7 +376,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
               </Link>
               <ol className="list-disc text-xs pl-3.5">
                 {
-                  searchResult.summary.map((point,index)=>(
+                  searchResult.summary.map((point, index) => (
                     <li key={index}>{point}</li>
                   ))
                 }
@@ -390,6 +390,7 @@ const SearchResult = ({ sectionsExpaned,searchResult }) => {
               {searchResult.date}
             </h1>
           </div>
+
         </div>
       </div>
     </div>

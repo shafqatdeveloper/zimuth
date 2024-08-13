@@ -14,7 +14,7 @@ const Login = () => {
         <form
           onSubmit={handleLogin}
           name="login"
-          className="bg-white dark:bg-[#22262b] shadow-md shadow-black/20 rounded-md w-[27%] flex flex-col gap-3 p-3"
+          className="bg-white dark:bg-[#22262b] shadow-md shadow-black/20 rounded-md w-5/6 sm:w-2/4 md:w-[27%] flex flex-col gap-3 p-3"
         >
           <h1 className="text-center text-xl font-medium tracking-wide">
             Login in to Zimuth

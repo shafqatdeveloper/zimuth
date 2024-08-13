@@ -102,15 +102,14 @@ const Pricing = () => {
         <Swiper
           centeredSlides={true}
           speed={1000}
-          loop={true}
+          // loop={true}
           spaceBetween={7}
           autoplay={{
             delay: 6000,
             disableOnInteraction: false,
           }}
           slidesPerView={1}
-          modules={[Pagination, Autoplay, Navigation]}
-          navigation={true}
+          modules={[Pagination, Autoplay]}
           pagination={true}
           className="w-full flex h-[70vh] md:hidden mt-5"
         >

@@ -42,73 +42,73 @@ const generateRandomPoints = (
 };
 
 const result = {
-  synopsis:{
-    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet.",
-    points:[
+  synopsis: {
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet.",
+    points: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Donec placerat nisl magna, et faucibus.",
       "Lorem ipsum dolor sit amet, Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu.",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat.",
       "Pagesconsectetur adipiscing elit. Aliquam at porttitor sem."
     ],
-    finalComment:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem."
+    finalComment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem."
   },
-  genericSummary:{
-    wordCount:500,
-    fleschKinkaid:"90/100",
-    subjectivity:"0.4/1",
-    polarity:"-0.9/[-1.1]",info:[
+  genericSummary: {
+    wordCount: 500,
+    fleschKinkaid: "90/100",
+    subjectivity: "0.4/1",
+    polarity: "-0.9/[-1.1]", info: [
       "Webpages summarizing the operations, mission, history and products of Generic Corporation"
     ],
-    summary:[
+    summary: [
       "Founded in 2001 by generic founder, generic corporation is a generic country industry company",
       "Generic Corporation was founded by Generic Founder with the generic mission of doing generic thing",
       "Generic text line for testing with additional length",
       "Generic testing text line"
     ]
   },
-  images:[
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
-    { img: dummyImage,description:"Stock image of some BS" },
+  images: [
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
+    { img: dummyImage, description: "Stock image of some BS" },
   ],
-  videos:[
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
-    {video:"https://www.youtube.com/embed/dQw4w9WgXcQ",source:"Youtube- Dave",title:"Stock video Title"},
+  videos: [
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
+    { video: "https://www.youtube.com/embed/dQw4w9WgXcQ", source: "Youtube- Dave", title: "Stock video Title" },
   ],
-  searchResult:{
-    wordCount:500,
-    fleschKinkaid:"90/100",
-    subjectivity:"0.4/1",
-    polarity:"-0.9/[-1.1]",info:[
+  searchResult: {
+    wordCount: 500,
+    fleschKinkaid: "90/100",
+    subjectivity: "0.4/1",
+    polarity: "-0.9/[-1.1]", info: [
       "Webpages summarizing the operations, mission, history and products of Generic Corporation"
     ],
-    summary:[
+    summary: [
       "Founded in 2001 by generic founder, generic corporation is a generic country industry company",
       "Generic Corporation was founded by Generic Founder with the generic mission of doing generic thing",
       "Generic text line for testing with additional length",
       "Generic testing text line"
     ],
-    date:"Sptember 11,2001"
+    date: "Sptember 11,2001"
   },
-  sitesMapChart:[
+  sitesMapChart: [
     {
       group: "Group 1",
       color: "red",
@@ -135,7 +135,7 @@ const result = {
       points: generateRandomPoints(9, 3, 8, 1, 6, 1, 7),
     },
   ],
-  treeData:{
+  treeData: {
     name: "Outdoor Spring Activities",
     children: [
       {
@@ -171,7 +171,7 @@ const result = {
       },
     ],
   },
-  timeLine:[
+  timeLine: [
     {
       date: "22/05/2024",
       text: "Generic Corp is dissolved by Generic Moron for generic reasons",
@@ -189,7 +189,7 @@ const result = {
       text: "Generic Corp is dissolved by Generic Moron for generic reasons",
     },
   ],
-  sentimentGraphData:[
+  sentimentGraphData: [
     { x: 1, y: 0, group: "Group 1" },
     { x: 2, y: 12, group: "Group 1" },
     { x: 3, y: 8, group: "Group 1" },
@@ -269,9 +269,9 @@ const SERP = () => {
   };
   return (
     <div className="min-h-screen w-full flex justify-center text-darkBlack bg-darkWhite dark:text-darkWhite dark:bg-darkBlack pt-24">
-      <div className="w-4/5 pt-5">
+      <div className="w-[90%] md:w-4/5 pt-5">
         {/* form */}
-        <div className="w-2/5">
+        <div className="w-full sm:w-3/5 md:w-2/5">
           <form className="w-full">
             <div className="w-full border flex justify-between items-center px-2 border-darkBlack bg-white dark:bg-[#22262b] dark:border-darkWhite rounded-md">
               <input
@@ -309,83 +309,98 @@ const SERP = () => {
             </button>
           </div>
           {/* Page Content */}
-          <div
-            className={`w-full flex ${
-              readMoreEnabled ? "h-[36rem]" : "h-72"
-            } justify-between pt-6 `}
-          >
-            {/* Typography */}
-            <div className="w-5/6">
-              <h1 className="text-3xl font-semibold tracking-wide pb-8">
-                Synopsis
-              </h1>
-              <Synopsis synopsis={result.synopsis} />
-            </div>
-            {/* Search Settings */}
-            <div className="relative" onMouseLeave={handleMouseLeave}>
-              <div className="pr-4">
-                <button
-                  onMouseEnter={handleMouseEnter}
-                  className="text-gray-500 dark:text-gray-300"
-                >
-                  <IoMdSettings size={23} />
-                </button>
-              </div>
-              <div
-                className={
-                  showMenu
-                    ? "absolute right-3 top-7 rounded-xl text-xs mt-2 w-max  bg-white border border-gray-500 shadow-2xl font-medium text-gray-500 z-10 opacity-100 transition-all duration-300"
-                    : "absolute right-3 top-7 rounded-xl text-xs mt-2 w-max  bg-white border border-gray-500 shadow-2xl font-medium text-gray-500 z-10 opacity-0 transition-all duration-300"
-                }
-              >
-                <ul className="p-2 flex flex-col gap-1">
-                  <li className="flex items-center">
-                    <input type="checkbox" id="option1" className="mr-2" />
-                    <label htmlFor="Disable grouped display">
-                      Disable grouped display
-                    </label>
-                  </li>
-                  <li className="flex items-center">
-                    <input type="checkbox" id="option1" className="mr-2" />
-                    <label htmlFor="Disable technicality priortization">
-                      Disable technicality priortization
-                    </label>
-                  </li>
-                  <li className="flex items-center">
-                    <input type="checkbox" id="option1" className="mr-2" />
-                    <label htmlFor="toggle site summaries">
-                      Toggle site summaries
-                    </label>
-                  </li>
-                  <li className="flex items-center">
-                    <input type="checkbox" id="option1" className="mr-2" />
-                    <label htmlFor="Show synopsis as paragraph">
-                      Show synopsis as paragraph
-                    </label>
-                  </li>
-                  <li className="flex items-center">
-                    <input type="checkbox" id="option1" className="mr-2" />
-                    <label htmlFor="show site summaries as paragraph">
-                      show site summaries as paragraph
-                    </label>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            {/* Read More */}
-            <button
-              onClick={() => setReadMoreEnabled(!readMoreEnabled)}
-              className="text-gray-500 dark:text-gray-300 text-sm font-medium absolute bottom-1 right-2"
+          <div>
+            <div
+              className={`w-full flex justify-between pt-6 `}
             >
-              {readMoreEnabled ? "Read Less" : "Read More"}
-            </button>
+              {/* Typography */}
+              <div className="w-5/6">
+                <h1 className="text-3xl font-semibold tracking-wide pb-8">
+                  Synopsis
+                </h1>
+                <Synopsis synopsis={result.synopsis} />
+              </div>
+              {/* Search Settings */}
+              <div className="relative" onMouseLeave={handleMouseLeave}>
+                <div className="pr-4">
+                  <button
+                    onClick={() => {
+                      if (window.innerWidth < 768 && showMenu) {
+                        handleMouseLeave()
+                      } else if (window.innerWidth < 768) {
+                        handleMouseEnter()
+                      }
+                    }}
+                    onMouseEnter={handleMouseEnter}
+                    className="text-gray-500 dark:text-gray-300"
+                  >
+                    <IoMdSettings size={23} />
+                  </button>
+                </div>
+                <div
+                  className={
+                    showMenu
+                      ? "absolute right-3 top-7 rounded-xl text-xs mt-2 w-max  bg-white border border-gray-500 shadow-2xl font-medium text-gray-500 z-10 opacity-100 transition-all duration-300"
+                      : "absolute right-3 top-7 rounded-xl text-xs mt-2 w-max  bg-white border border-gray-500 shadow-2xl font-medium text-gray-500 z-10 opacity-0 transition-all duration-300"
+                  }
+                >
+                  <ul className="p-2 flex flex-col gap-1">
+                    <li className="flex items-center">
+                      <input type="checkbox" id="option1" className="mr-2" />
+                      <label htmlFor="Disable grouped display">
+                        Disable grouped display
+                      </label>
+                    </li>
+                    <li className="flex items-center">
+                      <input type="checkbox" id="option1" className="mr-2" />
+                      <label htmlFor="Disable technicality priortization">
+                        Disable technicality priortization
+                      </label>
+                    </li>
+                    <li className="flex items-center">
+                      <input type="checkbox" id="option1" className="mr-2" />
+                      <label htmlFor="toggle site summaries">
+                        Toggle site summaries
+                      </label>
+                    </li>
+                    <li className="flex items-center">
+                      <input type="checkbox" id="option1" className="mr-2" />
+                      <label htmlFor="Show synopsis as paragraph">
+                        Show synopsis as paragraph
+                      </label>
+                    </li>
+                    <li className="flex items-center">
+                      <input type="checkbox" id="option1" className="mr-2" />
+                      <label htmlFor="show site summaries as paragraph">
+                        show site summaries as paragraph
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* Read More */}
+              <button
+                onClick={() => setReadMoreEnabled(!readMoreEnabled)}
+                className="text-gray-500 dark:text-gray-300 text-sm font-medium absolute bottom-1 right-2"
+              >
+                {readMoreEnabled ? "Read Less" : "Read More"}
+              </button>
+            </div>
+            {
+              readMoreEnabled && <div className="w-5/6 opacity-0">
+                <h1 className="text-3xl font-semibold tracking-wide pb-8">
+                  Synopsis
+                </h1>
+                <Synopsis synopsis={result.synopsis} />
+              </div>
+            }
           </div>
         </div>
         {/* Summaries about Generic Corporation and Generic Corporation Sites */}
-        <div className="w-full flex items-start gap-7 pt-6">
-          <div className="w-3/4 pb-32">
+        <div className="w-full flex flex-col lg:flex-row items-start gap-7 pt-6">
+          <div className="w-full lg:w-3/4 pb-32">
             <Summary
-            genericSummary={result.genericSummary}
+              genericSummary={result.genericSummary}
               sectionsExpaned={sectionsExpaned}
               handleSectionsExpand={handleSectionsExpand}
             />
@@ -394,9 +409,9 @@ const SERP = () => {
                 <SearchResult searchResult={result.searchResult} sectionsExpaned={sectionsExpaned} />
               </>
             )}
-            <SearchResultTwo genericSummary={result.genericSummary}  searchResult={result.searchResult}/>
+            <SearchResultTwo genericSummary={result.genericSummary} searchResult={result.searchResult} />
           </div>
-          <div className="w-1/4 bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-darkWhite rounded-lg border border-gray-400 shadow-md shadow-gray-300 dark:shadow-gray-600 mb-10">
+          <div className="w-full lg:w-1/4 bg-darkWhite dark:bg-darkBlack text-darkBlack dark:text-darkWhite rounded-lg border border-gray-400 shadow-md shadow-gray-300 dark:shadow-gray-600 mb-10">
             {/* Images Section */}
             <div
               className={

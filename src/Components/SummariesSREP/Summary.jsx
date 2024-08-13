@@ -4,7 +4,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import TooltipContent from "../TooltipContent/TooltipContent";
 import { FaGoogle } from "react-icons/fa";
 
-const Summary = ({ sectionsExpaned, handleSectionsExpand,genericSummary }) => {
+const Summary = ({ sectionsExpaned, handleSectionsExpand, genericSummary }) => {
   const openCloseSections = () => {
     handleSectionsExpand(!sectionsExpaned);
   };
@@ -21,17 +21,17 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand,genericSummary }) => {
       </ReactTooltip>
       {/* First Section Summaries about Generic Corporation */}
       <div className="w-full border-b border-b-black dark:border-b-darkWhite">
-        <div className="flex items-center justify-between">
+        <div className="flex w-full flex-col lg:flex-row lg:items-center justify-between gap-5 lg:gap-0">
           <h1 className="text-sm lg:text-base font-semibold">
             Summaries about Generic Corporation
           </h1>
           {/* Right Side Information */}
-          <div className="flex items-center gap-4">
+          <div className="flex w-full justify-between items-center gap-4">
             <div
               style={{ fontSize: "0.55rem", lineHeight: "0.7rem" }}
               data-tooltip-id="generic-info"
               data-tooltip-place="bottom"
-              className="flex items-center gap-2"
+              className="flex items-center lg:justify-center w-full gap-2"
             >
               <h1 className="font-semibold">Metrics</h1>
               <div className="w-[1.1px] h-6 bg-gray-600"></div>
@@ -81,11 +81,11 @@ const Summary = ({ sectionsExpaned, handleSectionsExpand,genericSummary }) => {
             <h1 className="font-semibold">Summary</h1>
             <ol className="list-disc">
               {
-                genericSummary.summary.map((point,index)=>(
+                genericSummary.summary.map((point, index) => (
 
-              <li>
-                {point}
-              </li>
+                  <li>
+                    {point}
+                  </li>
                 ))
               }
             </ol>
