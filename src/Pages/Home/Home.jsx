@@ -8,6 +8,8 @@ import SectionFour from "../../Components/HomeSections/SectionFour";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Home.css";
 import { useInView } from "react-intersection-observer";
+import Samples from "../../Components/SampleOutputs/Samples";
+import ResultSamples from "../../Components/ResultSamples/ResultSamples";
 
 const Home = () => {
   const [ref, inView] = useInView({ triggerOnce: false });
@@ -31,11 +33,17 @@ const Home = () => {
           <div ref={ref} className="w-full">
             <HeroCarousel />
           </div>
-          <div className="flex flex-col gap-24 lg:gap-40">
+          {/* <div className="flex flex-col gap-24 lg:gap-40">
             <SectionOne />
             <SectionTwo />
             <SectionThree />
             <SectionFour />
+          </div> */}
+          <div>
+            <Samples />
+          </div>
+          <div>
+            <ResultSamples />
           </div>
         </div>
       </div>

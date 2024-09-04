@@ -13,8 +13,8 @@ const Navbar = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { theme } = useContext(ThemeContext);
-  const [mobileMenu, setMobileMenu] = useState(false)
-  const locaton = useLocation()
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const locaton = useLocation();
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
@@ -34,8 +34,9 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-darkWhite dark:bg-[#22262b] flex items-center justify-center text-sm shadow-md fixed w-full z-20 transition-transform duration-300 text-darkBlack dark:text-darkWhite ${show ? "translate-y-0" : "-translate-y-full"
-        }`}
+      className={`bg-darkWhite dark:bg-[#22262b] flex items-center justify-center text-sm shadow-md fixed w-full z-20 transition-transform duration-300 text-darkBlack dark:text-darkWhite ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
     >
       <nav className="w-full md:!w-5/6">
         <div className="w-full">
@@ -82,18 +83,33 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <div onClick={() => setMobileMenu(!mobileMenu)} className={`md:hidden p-1 ${mobileMenu && "bg-gray-200 dark:bg-black rounded-md p-1"} mr-4`}>
+            <div
+              onClick={() => setMobileMenu(!mobileMenu)}
+              className={`md:hidden p-1 ${
+                mobileMenu && "bg-gray-200 dark:bg-black rounded-md p-1"
+              } mr-4`}
+            >
               <HiMenuAlt3 size={22} />
             </div>
           </div>
         </div>
       </nav>
-      <div className={mobileMenu ? "absolute top-16 left-0 bg-black/60 backdrop-blur-3xl h-[60vh] w-full transition-all duration-300" : "absolute top-16 left-[-100%] bg-black/60 backdrop-blur-3xl h-[60vh] transition-all duration-300 w-full"}>
-        <div className="w-full flex flex-col" >
+      <div
+        className={
+          mobileMenu
+            ? "absolute top-16 left-0 bg-black/60 backdrop-blur-3xl h-[60vh] w-full transition-all duration-300"
+            : "absolute top-16 left-[-100%] bg-black/60 backdrop-blur-3xl h-[60vh] transition-all duration-300 w-full"
+        }
+      >
+        <div className="w-full flex flex-col">
           <Link
             to="/about-us"
             onClick={() => setMobileMenu(false)}
-            className={`p-2 ${locaton.pathname === "/about-us" ? "bg-cyan80 text-darkBlack" : "text-darkWhite"} p-4 flex items-center gap-1 transition-all duration-300`}
+            className={`p-2 ${
+              locaton.pathname === "/about-us"
+                ? "bg-cyan80 text-darkBlack"
+                : "text-darkWhite"
+            } p-4 flex items-center gap-1 transition-all duration-300`}
           >
             <IoIosInformationCircle />
             About Us
@@ -101,7 +117,11 @@ const Navbar = () => {
           <Link
             to="/news"
             onClick={() => setMobileMenu(false)}
-            className={`p-2 ${locaton.pathname === "/news" ? "bg-cyan80 text-darkBlack" : "text-darkWhite"} p-4 flex items-center gap-1 transition-all duration-300`}
+            className={`p-2 ${
+              locaton.pathname === "/news"
+                ? "bg-cyan80 text-darkBlack"
+                : "text-darkWhite"
+            } p-4 flex items-center gap-1 transition-all duration-300`}
           >
             <FaRegNewspaper />
             News
@@ -109,7 +129,11 @@ const Navbar = () => {
           <Link
             to="/pricing"
             onClick={() => setMobileMenu(false)}
-            className={`p-2 ${locaton.pathname === "/pricing" ? "bg-cyan80 text-darkBlack" : "text-darkWhite"} p-4 flex items-center gap-1 transition-all duration-300`}
+            className={`p-2 ${
+              locaton.pathname === "/pricing"
+                ? "bg-cyan80 text-darkBlack"
+                : "text-darkWhite"
+            } p-4 flex items-center gap-1 transition-all duration-300`}
           >
             <IoPricetags />
             Pricing
@@ -117,7 +141,11 @@ const Navbar = () => {
           <Link
             to="/login"
             onClick={() => setMobileMenu(false)}
-            className={`p-2 ${locaton.pathname === "/login" ? "bg-cyan80 text-darkBlack" : "text-darkWhite"} p-4 flex items-center gap-1 transition-all duration-300`}
+            className={`p-2 ${
+              locaton.pathname === "/login"
+                ? "bg-cyan80 text-darkBlack"
+                : "text-darkWhite"
+            } p-4 flex items-center gap-1 transition-all duration-300`}
           >
             <FaUserCircle />
             Login
@@ -125,7 +153,6 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-
   );
 };
 

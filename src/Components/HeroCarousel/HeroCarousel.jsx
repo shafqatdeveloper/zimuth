@@ -21,30 +21,40 @@ const Carousel = () => {
       slideHeading: "Efficiency",
       slideDesc: "Avoid Duplication and Content farms.",
       slideLink: "/link",
+      requirement:
+        "A minimum of 12 sources per synopsis triple the industry average.",
     },
     {
       slideImg: Img2,
       slideHeading: "Efficiency",
       slideDesc: "Avoid Duplication and Content farms.",
       slideLink: "/link",
+      requirement:
+        "A minimum of 12 sources per synopsis triple the industry average.",
     },
     {
       slideImg: Img1,
       slideHeading: "Efficiency",
       slideDesc: "Avoid Duplication and Content farms.",
       slideLink: "/link",
+      requirement:
+        "A minimum of 12 sources per synopsis triple the industry average.",
     },
     {
       slideImg: Img2,
       slideHeading: "Efficiency",
       slideDesc: "Avoid Duplication and Content farms.",
       slideLink: "/link",
+      requirement:
+        "A minimum of 12 sources per synopsis triple the industry average.",
     },
     {
       slideImg: Img1,
       slideHeading: "Efficiency",
       slideDesc: "Avoid Duplication and Content farms.",
       slideLink: "/link",
+      requirement:
+        "A minimum of 12 sources per synopsis triple the industry average.",
     },
   ];
 
@@ -64,7 +74,8 @@ const Carousel = () => {
         </div>
         <div className="relative px-2.5 md:px-0">
           <Swiper
-            modules={[Navigation]} ƒ
+            modules={[Navigation]}
+            ƒ
             spaceBetween={17}
             slidesPerView={3.5}
             direction="horizontal"
@@ -78,7 +89,7 @@ const Carousel = () => {
                 slidesPerView: 1,
               },
               640: {
-                slidesPerView: 1.5
+                slidesPerView: 1.5,
               },
               768: {
                 slidesPerView: 2,
@@ -97,19 +108,28 @@ const Carousel = () => {
                     alt={slide.slideHeading}
                     className="w-full h-[33rem] object-cover"
                   />
-                  <div className="absolute inset-0 bg-white/20 p-6 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-white">{slide.slideHeading}</h3>
-                      <p className="text-xl font-bold text-white">
-                        {slide.slideDesc}
-                      </p>
+                  <div className="absolute inset-0 bg-white/20 px-6 flex flex-col justify-between">
+                    <div className="flex flex-col py-6 items-stretch justify-between h-full">
+                      <div className=" flex flex-col gap-6">
+                        <h3 className="text-white text-sm">
+                          {slide.slideHeading}
+                        </h3>
+                        <p className="text-xl font-bold text-white">
+                          {slide.slideDesc}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-white text-xs w-4/5">
+                          {slide.requirement}
+                        </p>
+                      </div>
                     </div>
                     <Link
                       to={slide.slideLink}
-                      className="self-end hover:scale-125 transition-all duration-300"
+                      className="absolute right-5 bottom-6 hover:scale-125 transition-all duration-300"
                     >
                       <CgArrowRight
-                        size={34}
+                        size={38}
                         className="text-white pointer-expand"
                       />
                     </Link>
